@@ -8,7 +8,7 @@ namespace ZombieDefense
         [SerializeField]
         private CellType _cellType;
 
-        public CellType CellTypo { get; set; }
+        public CellType CellTypo { get => _cellType; set => _cellType = value; }
 
         public event ClickEventHandler OnClickEventHandler;
 
