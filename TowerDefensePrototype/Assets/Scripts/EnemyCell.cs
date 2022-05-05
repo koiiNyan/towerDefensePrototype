@@ -6,7 +6,7 @@ namespace ZombieDefense
 {
     public class EnemyCell : MonoBehaviour
     {
-        private List<Zombie> _zombies;
+        private List<Zombie> _zombies = new List<Zombie>();
 
         [SerializeField]
         private List<Cell> _pairTurretCell;
@@ -19,14 +19,18 @@ namespace ZombieDefense
             //Вызов ивента на стрельбу в AttackerTurret у парной клетки
             //Добавить зомби в пул
 
-            ZombieEnterEvent?.Invoke(_pairTurretCell, _zombies);
-
+            _zombies.Add(collision.gameObject.GetComponent<Zombie>());
+            ZombieEnterEvent?.Invoke(_zombies);
 
         }
 
         private void OnCollisionExit(Collision collision)
         {
             //Если врагов на клетке нет, башня перестает стрелять
+
+            _zombies.Remove(collision.gameObject.GetComponent<Zombie>());
+            ZombieEnterEvent?.Invoke(_zombies);
+
         }
 
         public void SetTurretCell(Cell pairCell)
@@ -35,6 +39,6 @@ namespace ZombieDefense
         }
 
 
-        public delegate void ZombieEnterEventHandler(List<Cell> component, List<Zombie> zombies);
+        public delegate void ZombieEnterEventHandler(List<Zombie> zombies);
     }
 }

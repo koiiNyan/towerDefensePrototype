@@ -64,6 +64,7 @@ namespace ZombieDefense
             var turret = Instantiate(_attackerTurretPrefab, turretPosition, rotation);
             component.CellTypo = CellType.Attacker;
             turret.GetComponent<AttackerTurret>().TurretCell = component;
+            component.AttackerTurret = turret.GetComponent<AttackerTurret>();
         }
 
         private void CreateEnemiesPool()
@@ -99,7 +100,7 @@ namespace ZombieDefense
                 {
                     pooledZombie.SetActive(true);
                     pooledZombie.transform.position = pooledZombie.GetComponent<Zombie>().InitialPosition; //TODO
-                    pooledZombie.GetComponent<Zombie>().SetMoveSpeedAnimator();//TODO
+                    pooledZombie.GetComponent<Zombie>().SetMoveSpeedAnimator(true);//TODO
                 }
 
                 yield return new WaitForSeconds(_spawnSeconds);

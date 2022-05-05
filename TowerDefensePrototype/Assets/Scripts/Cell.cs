@@ -15,6 +15,10 @@ namespace ZombieDefense
         private EnemyCell _pairEnemyCell;
         public EnemyCell GetEnemyCell => _pairEnemyCell;
 
+        [SerializeField]
+        private AttackerTurret _attackerTurret;
+        public AttackerTurret AttackerTurret { get; set; }
+
         public void SetEnemyCell(EnemyCell enemyCell)
         {
             _pairEnemyCell = enemyCell;

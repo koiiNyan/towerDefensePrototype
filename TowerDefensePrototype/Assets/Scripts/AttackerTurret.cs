@@ -54,7 +54,6 @@ namespace ZombieDefense
 
         private const float c_turretRotationX = 90f;
 
-        #endregion
 
         public float GetRotation(float x) => (x > 0) ? -c_turretRotationX : c_turretRotationX;
 
@@ -66,18 +65,57 @@ namespace ZombieDefense
         private EnemyCell _enemyCell;
         public EnemyCell EnemyCell { get => _enemyCell; set => _enemyCell = value; }
 
+        [SerializeField]
+        private int _attackDamage = 5;
+        [SerializeField]
+        private float _attackSpeed = 3f;
+        private float _delay = 3f;
+   
+
+        #endregion
+
         private void Start()
         {
-            Debug.Log("turretCell= " + _turretCell);
-            Debug.Log("turretCellGetEnemyCell= " + _turretCell.GetEnemyCell);
             _enemyCell = _turretCell.GetEnemyCell;
             _enemyCell.ZombieEnterEvent += Attack;
         }
 
-        private void Attack(List<Cell> component, List<Zombie> zombies)
+        private void Attack(List<Zombie> zombies)
         {
-            Debug.Log("ATTACK");
+            //StartCoroutine(Attackk(zombies));
+
+            while (zombies.Count != 0)
+            {
+                if (_attackSpeed >= 0)
+                {
+                    zombies[0].Health -= _attackDamage;
+                   // Debug.Log(zombies[0].Health);
+
+                    if (zombies[0].Health <= 0) zombies[0].Die();
+
+                    _attackSpeed -= Time.deltaTime;
+                }
+                else
+                {
+                    _attackSpeed = _delay;
+                }
+                               
+                return;
+            }
+
+
         }
+
+      /*  private IEnumerator Attackk(List<Zombie> zombies)
+        {
+            while(zombies.Count != 0)
+            {
+                Debug.Log("Attack");
+                yield return null;
+            }
+        }*/
+       
+       
     }
 
 }

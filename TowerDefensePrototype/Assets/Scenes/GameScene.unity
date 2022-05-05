@@ -419,6 +419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &75943627
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -512,6 +513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &85010182
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -543,6 +545,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &88576463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88576460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a2e1de2ffba814e8b444732c09aa78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pairTurretCell: []
 --- !u!1001 &93333461
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -623,6 +638,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &93333465
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -811,6 +827,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &147968619
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -842,6 +859,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &154587546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154587543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a2e1de2ffba814e8b444732c09aa78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pairTurretCell: []
 --- !u!1 &165716198
 GameObject:
   m_ObjectHideFlags: 1
@@ -910,7 +940,7 @@ Transform:
   m_Children:
   - {fileID: 841363688}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &165951196
 PrefabInstance:
@@ -992,6 +1022,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &165951200
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1085,6 +1116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &166201468
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1178,6 +1210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &180977689
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1209,6 +1242,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &185474649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185474646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a2e1de2ffba814e8b444732c09aa78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pairTurretCell: []
 --- !u!1001 &186595745
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1351,6 +1397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &196587853
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1444,6 +1491,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &207361014
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1537,6 +1585,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &229508710
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1692,6 +1741,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &270859489
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1847,6 +1897,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &277854681
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1878,6 +1929,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &317749894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317749891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a2e1de2ffba814e8b444732c09aa78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pairTurretCell: []
 --- !u!1 &324652629 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5234217450553972281, guid: 60ee61b107ddee04ebe6b3afab332f46, type: 3}
@@ -1896,6 +1960,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &324652632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 324652629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a2e1de2ffba814e8b444732c09aa78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pairTurretCell: []
 --- !u!1 &339678412
 GameObject:
   m_ObjectHideFlags: 0
@@ -2007,6 +2084,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &346546925
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2075,8 +2153,8 @@ Transform:
   - {fileID: 1824796337}
   - {fileID: 60306917}
   - {fileID: 1673393880}
-  - {fileID: 758097164}
   - {fileID: 1932057078}
+  - {fileID: 758097164}
   m_Father: {fileID: 1415635305}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2098,6 +2176,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &365126738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365126735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a2e1de2ffba814e8b444732c09aa78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pairTurretCell: []
 --- !u!1001 &368510687
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2178,6 +2269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &368510691
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2395,6 +2487,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &468467711
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2426,6 +2519,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &480730472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480730469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a2e1de2ffba814e8b444732c09aa78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pairTurretCell: []
 --- !u!1001 &499244443
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2506,6 +2612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &499244447
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2599,6 +2706,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &521697469
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2630,6 +2738,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &522424259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522424256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a2e1de2ffba814e8b444732c09aa78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pairTurretCell: []
 --- !u!1001 &539126657
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2772,6 +2893,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &541926587
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2927,6 +3049,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &578590324
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3020,6 +3143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &609482052
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3113,6 +3237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &661182576
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3144,6 +3269,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &675882947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675882944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a2e1de2ffba814e8b444732c09aa78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pairTurretCell: []
 --- !u!1001 &686317379
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3224,6 +3362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &686317383
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3328,7 +3467,7 @@ Transform:
   m_LocalScale: {x: 2, y: 1, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &706398354
 PrefabInstance:
@@ -3410,6 +3549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &706398358
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3503,6 +3643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &717567673
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3596,6 +3737,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &748464288
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3689,6 +3831,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &810305028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810305025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a2e1de2ffba814e8b444732c09aa78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pairTurretCell: []
 --- !u!1001 &826958723
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3769,6 +3924,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &826958727
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3862,6 +4018,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &830454486
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3955,6 +4112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &830526491
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3986,6 +4144,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &834168446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834168443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a2e1de2ffba814e8b444732c09aa78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pairTurretCell: []
 --- !u!1 &841363687
 GameObject:
   m_ObjectHideFlags: 0
@@ -4162,6 +4333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &879943389
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4379,6 +4551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &916841204
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4472,6 +4645,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &951723366
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4727,6 +4901,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &996134015
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4820,6 +4995,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &1010087467
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4851,6 +5027,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &1010988231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010988228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a2e1de2ffba814e8b444732c09aa78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pairTurretCell: []
 --- !u!1001 &1028747684
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4993,6 +5182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &1167754947
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5086,6 +5276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &1190064165
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5193,7 +5384,7 @@ Transform:
   m_LocalScale: {x: 10, y: 1, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1206962120
 PrefabInstance:
@@ -5275,6 +5466,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &1206962124
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5306,6 +5498,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &1207075033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207075030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a2e1de2ffba814e8b444732c09aa78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pairTurretCell: []
 --- !u!1001 &1208179569
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5386,6 +5591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &1208179573
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5417,6 +5623,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &1208321136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1208321133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a2e1de2ffba814e8b444732c09aa78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pairTurretCell: []
 --- !u!1001 &1224838292
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5497,6 +5716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &1224838296
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5590,6 +5810,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &1253243634
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5621,6 +5842,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &1256736838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256736835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a2e1de2ffba814e8b444732c09aa78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pairTurretCell: []
 --- !u!1001 &1272241739
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5701,6 +5935,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &1272241743
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5794,6 +6029,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &1282913472
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5887,6 +6123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &1293866501
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5980,6 +6217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &1295125958
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6197,6 +6435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &1362452447
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6243,7 +6482,7 @@ Transform:
   - {fileID: 339678413}
   - {fileID: 1651260288}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1415635306
 MonoBehaviour:
@@ -6280,6 +6519,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &1435235568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435235565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a2e1de2ffba814e8b444732c09aa78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pairTurretCell: []
 --- !u!1001 &1442230965
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6360,6 +6612,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &1505199676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505199673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a2e1de2ffba814e8b444732c09aa78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pairTurretCell: []
 --- !u!1001 &1513776167
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6440,6 +6705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &1513776171
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6471,6 +6737,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &1531615217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531615214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a2e1de2ffba814e8b444732c09aa78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pairTurretCell: []
 --- !u!1001 &1532827195
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6613,6 +6892,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &1535360173
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6626,63 +6906,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
---- !u!1001 &1550210530
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 8297726644617178858, guid: af07a41d27cc44a46937483b3da7b90c, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8297726644617178858, guid: af07a41d27cc44a46937483b3da7b90c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.22049809
-      objectReference: {fileID: 0}
-    - target: {fileID: 8297726644617178858, guid: af07a41d27cc44a46937483b3da7b90c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.00000023841858
-      objectReference: {fileID: 0}
-    - target: {fileID: 8297726644617178858, guid: af07a41d27cc44a46937483b3da7b90c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 10.952301
-      objectReference: {fileID: 0}
-    - target: {fileID: 8297726644617178858, guid: af07a41d27cc44a46937483b3da7b90c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8297726644617178858, guid: af07a41d27cc44a46937483b3da7b90c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8297726644617178858, guid: af07a41d27cc44a46937483b3da7b90c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8297726644617178858, guid: af07a41d27cc44a46937483b3da7b90c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8297726644617178858, guid: af07a41d27cc44a46937483b3da7b90c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8297726644617178858, guid: af07a41d27cc44a46937483b3da7b90c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8297726644617178858, guid: af07a41d27cc44a46937483b3da7b90c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8300911614584933182, guid: af07a41d27cc44a46937483b3da7b90c, type: 3}
-      propertyPath: m_Name
-      value: Zombie
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: af07a41d27cc44a46937483b3da7b90c, type: 3}
 --- !u!1 &1551521220 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5234217450553972281, guid: 60ee61b107ddee04ebe6b3afab332f46, type: 3}
@@ -6701,6 +6924,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &1551521223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1551521220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a2e1de2ffba814e8b444732c09aa78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pairTurretCell: []
 --- !u!1001 &1552748991
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6781,6 +7017,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &1552748995
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6812,6 +7049,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &1572441550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572441547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a2e1de2ffba814e8b444732c09aa78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pairTurretCell: []
 --- !u!1 &1576625508 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5234217450553972281, guid: 60ee61b107ddee04ebe6b3afab332f46, type: 3}
@@ -6830,6 +7080,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &1576625511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576625508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a2e1de2ffba814e8b444732c09aa78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pairTurretCell: []
 --- !u!1001 &1592226820
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6910,6 +7173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &1592226824
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7003,6 +7267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &1624400302
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7096,6 +7361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &1634040683
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7405,6 +7671,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &1686944777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1686944774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a2e1de2ffba814e8b444732c09aa78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pairTurretCell: []
 --- !u!1 &1700314169 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5234217450553972281, guid: 60ee61b107ddee04ebe6b3afab332f46, type: 3}
@@ -7423,6 +7702,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &1700314172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700314169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a2e1de2ffba814e8b444732c09aa78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pairTurretCell: []
 --- !u!1001 &1706930280
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7503,6 +7795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &1706930284
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7596,6 +7889,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &1767574777
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7689,6 +7983,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &1776569958
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7782,6 +8077,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &1802532198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802532195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a2e1de2ffba814e8b444732c09aa78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pairTurretCell: []
 --- !u!1001 &1817048040
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7986,6 +8294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &1825639125
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8017,6 +8326,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &1834682192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834682189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a2e1de2ffba814e8b444732c09aa78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pairTurretCell: []
 --- !u!1001 &1867985946
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8097,6 +8419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &1867985950
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8190,6 +8513,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &1896663716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896663713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a2e1de2ffba814e8b444732c09aa78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pairTurretCell: []
 --- !u!1001 &1909256329
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8270,6 +8606,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &1909256333
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8363,6 +8700,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &1951334566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951334563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a2e1de2ffba814e8b444732c09aa78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pairTurretCell: []
 --- !u!1001 &1972068706
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8505,6 +8855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &1979930623
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8536,6 +8887,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &1980418842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980418839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a2e1de2ffba814e8b444732c09aa78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pairTurretCell: []
 --- !u!1001 &1994101918
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8616,6 +8980,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &1994101922
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8709,6 +9074,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &2000368651
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8740,6 +9106,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &2018652964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018652961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a2e1de2ffba814e8b444732c09aa78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pairTurretCell: []
 --- !u!1001 &2045468919
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8820,6 +9199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &2045468923
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8959,7 +9339,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2076708805
 PrefabInstance:
@@ -9041,6 +9421,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &2109222407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109222404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a2e1de2ffba814e8b444732c09aa78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pairTurretCell: []
 --- !u!1001 &2109482470
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9121,6 +9514,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &2109482474
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9214,6 +9608,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellType: 0
+  _pairEnemyCell: {fileID: 0}
 --- !u!65 &2147454081
 BoxCollider:
   m_ObjectHideFlags: 0
