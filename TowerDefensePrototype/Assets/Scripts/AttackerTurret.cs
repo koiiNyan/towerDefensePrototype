@@ -58,6 +58,26 @@ namespace ZombieDefense
 
         public float GetRotation(float x) => (x > 0) ? -c_turretRotationX : c_turretRotationX;
 
+        [SerializeField]
+        private Cell _turretCell;
+        public Cell TurretCell { get => _turretCell; set => _turretCell = value; }
+
+        [SerializeField]
+        private EnemyCell _enemyCell;
+        public EnemyCell EnemyCell { get => _enemyCell; set => _enemyCell = value; }
+
+        private void Start()
+        {
+            Debug.Log("turretCell= " + _turretCell);
+            Debug.Log("turretCellGetEnemyCell= " + _turretCell.GetEnemyCell);
+            _enemyCell = _turretCell.GetEnemyCell;
+            _enemyCell.ZombieEnterEvent += Attack;
+        }
+
+        private void Attack(List<Cell> component, List<Zombie> zombies)
+        {
+            Debug.Log("ATTACK");
+        }
     }
 
 }

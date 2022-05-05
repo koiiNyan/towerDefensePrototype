@@ -28,6 +28,7 @@ namespace ZombieDefense
             FollowEvents();
             CreateEnemiesPool();
             StartCoroutine(SpawnEnemies());
+            SetCells();
         }
 
         private void FollowEvents()
@@ -60,8 +61,9 @@ namespace ZombieDefense
                 new Vector3(0f, _attackerTurretPrefab.GetComponent<AttackerTurret>().GetRotation(cellPosition.x), 0f));     //TODO
             var turretPosition = cellPosition;
             turretPosition.y = 0;
-            Instantiate(_attackerTurretPrefab, turretPosition, rotation);
+            var turret = Instantiate(_attackerTurretPrefab, turretPosition, rotation);
             component.CellTypo = CellType.Attacker;
+            turret.GetComponent<AttackerTurret>().TurretCell = component;
         }
 
         private void CreateEnemiesPool()
@@ -101,6 +103,25 @@ namespace ZombieDefense
                 }
 
                 yield return new WaitForSeconds(_spawnSeconds);
+            }
+        }
+
+        private void SetCells()
+        {
+            var allEnemiesCells = GetComponentsInChildren<EnemyCell>();
+
+            foreach (Cell cell in _allCells)
+            {
+                foreach(EnemyCell enemy in allEnemiesCells)
+                {
+                    if (cell.transform.position.z == enemy.transform.position.z)
+                    {
+                        cell.SetEnemyCell(enemy);
+                        enemy.SetTurretCell(cell);
+
+                        break;
+                    }
+                }
             }
         }
 

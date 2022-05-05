@@ -10,6 +10,16 @@ namespace ZombieDefense
 
         public CellType CellTypo { get => _cellType; set => _cellType = value; }
 
+
+        [SerializeField]
+        private EnemyCell _pairEnemyCell;
+        public EnemyCell GetEnemyCell => _pairEnemyCell;
+
+        public void SetEnemyCell(EnemyCell enemyCell)
+        {
+            _pairEnemyCell = enemyCell;
+        }
+
         public event ClickEventHandler OnClickEventHandler;
 
         public event FocusEventHandler OnFocusEventHandler;
