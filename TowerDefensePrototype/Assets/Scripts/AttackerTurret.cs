@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace ZombieDefense
 {
@@ -68,8 +69,13 @@ namespace ZombieDefense
         [SerializeField]
         private int _attackDamage = 5;
         [SerializeField]
-        private float _attackSpeed = 3f;
-        private float _delay = 3f;
+        private float _attackSpeed = 1f;
+        [SerializeField]
+        private Slider _hpBar;
+        [SerializeField]
+        private int _cost = 20;
+
+        public int Cost { get => _cost; private set => _cost = value; }
    
 
         #endregion
@@ -80,41 +86,46 @@ namespace ZombieDefense
             _enemyCell.ZombieEnterEvent += Attack;
         }
 
+
         private void Attack(List<Zombie> zombies)
         {
-            //StartCoroutine(Attackk(zombies));
+            StartCoroutine(AttackCor(zombies));
+        }
+
+        private IEnumerator AttackCor(List<Zombie> zombies)
+        {
 
             while (zombies.Count != 0)
             {
-                if (_attackSpeed >= 0)
-                {
-                    zombies[0].Health -= _attackDamage;
-                   // Debug.Log(zombies[0].Health);
-
-                    if (zombies[0].Health <= 0) zombies[0].Die();
-
-                    _attackSpeed -= Time.deltaTime;
-                }
+                //Debug.Log(zombies[0].Health);
+                if (zombies[0].Health > 0) zombies[0].Health -= _attackDamage;
                 else
                 {
-                    _attackSpeed = _delay;
+                    zombies[0].Die();
+                    zombies.Remove(zombies[0]);
+                   // Debug.Log(zombies.Count);
                 }
-                               
-                return;
-            }
+                
+                yield return new WaitForSeconds(_attackSpeed);
 
+            }
+           // Debug.Log("no zombies");
+
+            yield return null;
 
         }
-
-      /*  private IEnumerator Attackk(List<Zombie> zombies)
-        {
-            while(zombies.Count != 0)
-            {
-                Debug.Log("Attack");
-                yield return null;
-            }
-        }*/
        
+        public void DealDamage(float damage)
+        {
+            _hp -= damage;
+            _hpBar.value -= damage;
+        }
+
+        public void Die()
+        {
+            _turretCell.AttackerTurret = null;
+            Destroy(gameObject);
+        }
        
     }
 

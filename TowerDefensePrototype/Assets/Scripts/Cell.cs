@@ -17,7 +17,7 @@ namespace ZombieDefense
 
         [SerializeField]
         private AttackerTurret _attackerTurret;
-        public AttackerTurret AttackerTurret { get; set; }
+        public AttackerTurret AttackerTurret { get => _attackerTurret; set => _attackerTurret = value; }
 
         public void SetEnemyCell(EnemyCell enemyCell)
         {

@@ -504,6 +504,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hp: 1
   _level: 1
+  _turretCell: {fileID: 0}
+  _enemyCell: {fileID: 0}
+  _attackDamage: 5
+  _attackSpeed: 3
+  _hpBar: {fileID: 264412603}
 --- !u!1 &6916199308335554278
 GameObject:
   m_ObjectHideFlags: 0
