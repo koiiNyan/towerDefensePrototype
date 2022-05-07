@@ -28,7 +28,8 @@ namespace ZombieDefense
 
         public void BuildFarmerTurret()
         {
-
+            _levelManager.CreateFarmerTurret(_chosenCell, _chosenCell.transform.position);
+            gameObject.SetActive(false);
         }
 
 

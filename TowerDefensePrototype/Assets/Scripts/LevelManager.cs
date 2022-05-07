@@ -14,6 +14,8 @@ namespace ZombieDefense
 
         [SerializeField]
         private GameObject _attackerTurretPrefab;
+        [SerializeField]
+        private GameObject _farmerTurretPrefab;
 
         private List<GameObject> _pooledObjects;
         [SerializeField]
@@ -134,6 +136,32 @@ namespace ZombieDefense
 
                 //Debug.Log(turret.GetComponent<AttackerTurret>());
                 component.AttackerTurret = turret.GetComponent<AttackerTurret>();
+
+                _player.AddMoney(-turretCost);
+                //Debug.Log(turretCost);
+            }
+            else Debug.Log("Player doesn't have enough Money!");
+        }
+
+
+
+
+        //TODO MUST BE IN ONE METHOD
+
+        public void CreateFarmerTurret(Cell component, Vector3 cellPosition) //TODO
+        {
+            Debug.Log(_farmerTurretPrefab);
+            var turretCost = _farmerTurretPrefab.GetComponent<FarmerTurret>().Cost;
+
+            if (EnoughMoney(turretCost))
+            {
+                var rotation = Quaternion.Euler(
+                    new Vector3(0f, _farmerTurretPrefab.GetComponent<FarmerTurret>().GetRotation(cellPosition.x), 0f));     //TODO
+                var turretPosition = cellPosition;
+                turretPosition.y = 0;
+                var turret = Instantiate(_farmerTurretPrefab, turretPosition, rotation);
+                component.CellTypo = CellType.Farmer;
+
 
                 _player.AddMoney(-turretCost);
                 //Debug.Log(turretCost);
