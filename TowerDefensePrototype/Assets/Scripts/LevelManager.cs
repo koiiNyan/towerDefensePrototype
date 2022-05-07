@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.Collections;
@@ -35,6 +35,9 @@ namespace ZombieDefense
         private float _timer;
 
         private bool _canSpawn = true;
+
+        [SerializeField]
+        private GameObject _turretUI;
 
         private void Awake()
         {
@@ -81,25 +84,41 @@ namespace ZombieDefense
             foreach (Cell cell in _allCells)
             {
                 cell.OnClickEventHandler += SelectActionCellComponent;
-                cell.OnFocusEventHandler += HoverAction;
             }
             _player.GameOverEventHandler += GameOver;
         }
 
         public void SelectActionCellComponent(Cell component)
         {
-
-            CreateAttackerTurret(component, component.transform.position);
+            if(component.CellTypo == CellType.Empty)
+            //CreateAttackerTurret(component, component.transform.position);
+            {
+                TurretBuildMenu(component);
+            }
+            //Здесь вызывать не создание башни, а функцию показа юи строительства (если клетка пустая, через celltype). Передавать в параметры положение для юи
+            //В Юи - выбор башни
+            //Проверять, что на клетка - 1) уже не занята башней
+            // Для атакующей башни - проверять, что противоположная клетка не занята атакующей башней (через cell type)
+           else Debug.Log("Cant'build");
         }
 
-        public void HoverAction(Cell component, bool isSelect)
+        private void TurretBuildMenu(Cell component)
         {
-
+            if (_turretUI.activeInHierarchy)
+            {
+                Debug.Log("active");
+                return;
+            }
+            else
+            {
+                _turretUI.SetActive(true);
+                _turretUI.GetComponent<TurretBuyMenu>().ChosenCell = component;
+                _turretUI.GetComponent<TurretBuyMenu>().SetButtonActivity();
+            }
         }
 
 
-
-        private void CreateAttackerTurret(Cell component, Vector3 cellPosition) //TODO
+        public void CreateAttackerTurret(Cell component, Vector3 cellPosition) //TODO
         {
             var turretCost = _attackerTurretPrefab.GetComponent<AttackerTurret>().Cost;
 
@@ -186,6 +205,17 @@ namespace ZombieDefense
                         cell.SetEnemyCell(enemy);
                         enemy.SetTurretCell(cell);
 
+                        break;
+                    }
+                }
+
+                foreach (Cell goodCell in _allCells)
+                {
+                   
+                    if (cell.transform.position.z == goodCell.transform.position.z &&
+                        Mathf.Abs(cell.transform.position.x - goodCell.transform.position.x) == 2)
+                    {
+                        cell.ParallelCell = goodCell;
                         break;
                     }
                 }

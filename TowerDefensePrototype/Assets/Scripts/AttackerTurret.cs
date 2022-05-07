@@ -123,8 +123,9 @@ namespace ZombieDefense
 
         public void Die()
         {
+            _turretCell.CellTypo = CellType.Empty;
             _turretCell.AttackerTurret = null;
-            Destroy(gameObject);
+           Destroy(gameObject);
         }
        
     }
