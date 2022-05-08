@@ -44,6 +44,9 @@ namespace ZombieDefense
         private int _money = 5;
 
         private Player _player;
+
+        [SerializeField, Range (0.01f, 0.5f)]
+        private float _attackDamage = 0.05f;
         #endregion
 
         private void Awake()
@@ -51,6 +54,7 @@ namespace ZombieDefense
             _zombieAnimator = GetComponent<Animator>();
             _currentHp = _hp;
             _player = GameObject.Find("Player").GetComponent<Player>();
+
 
         }
 
@@ -130,7 +134,12 @@ namespace ZombieDefense
                 foreach (AttackerTurret turret in allTurrets)
                 {
                     var deltaDistance = turret.transform.position - transform.position;
-                    if (deltaDistance.z > distance.z) distance = turret.transform.position;
+                    if (deltaDistance.z > distance.z)
+                    {
+                        distance = turret.transform.position;
+
+                        if (turret.EnemyCell.Zombies.Count >= 3) distance.z = transform.position.z;
+                    }
 
                     /* Если дельта самая большая, проверяем, что ботов на клетке !=3
                      * Если ботов 3 или более, идем дальше по списку башен
@@ -146,7 +155,7 @@ namespace ZombieDefense
             }
 
 
-            return distance; //_player.transform.position; //TODO
+            return distance; 
         }
 
         private IEnumerator Attack() //TODO
@@ -155,16 +164,20 @@ namespace ZombieDefense
             SetMoveSpeedAnimator(false);
             _zombieAnimator.SetTrigger("Attack");
 
+
+
             var allTurrets = FindAllAttackerTurrets();
             AttackerTurret currentTurret = null;
             foreach (AttackerTurret turret in allTurrets)
             {
                 if (Mathf.Abs(turret.transform.position.z - transform.position.z) <= 0.5) currentTurret = turret;
             }
+            Debug.Log(currentTurret);
 
             while (currentTurret != null && !dead)
             {
-                if (currentTurret.Health > 0) currentTurret.DealDamage(0.05f);
+                if (currentTurret.Health > 0) currentTurret.DealDamage(_attackDamage);
+
                 yield return new WaitForSeconds(1f);
 
                 if (currentTurret.Health <= 0)

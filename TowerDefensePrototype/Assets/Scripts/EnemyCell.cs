@@ -7,6 +7,7 @@ namespace ZombieDefense
     public class EnemyCell : MonoBehaviour
     {
         private List<Zombie> _zombies = new List<Zombie>();
+        public List<Zombie> Zombies { get => _zombies; private set => _zombies = value; }
 
         [SerializeField]
         private List<Cell> _pairTurretCell;

@@ -501,7 +501,7 @@ GameObject:
   - component: {fileID: -4686160801098187020}
   - component: {fileID: 431674997}
   m_Layer: 0
-  m_Name: Zombie
+  m_Name: Zombie_Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -554,10 +554,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfdcc22b999b6ed4aa271a9711b1e0fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hp: 50
+  _hp: 100
   _moveSpeed: 1
   _money: 5
-  _attackDamage: 0.1
+  _attackDamage: 0.2
 --- !u!54 &-4686160801098187020
 Rigidbody:
   m_ObjectHideFlags: 0
