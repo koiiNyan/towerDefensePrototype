@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -76,6 +76,9 @@ namespace ZombieDefense
         private int _cost = 20;
 
         public int Cost { get => _cost; private set => _cost = value; }
+
+        [SerializeField, Range(1, 20), Tooltip("Процент увеличения цены при повышении уровня")]
+        private int _costPercent;
    
 
         #endregion
@@ -126,6 +129,12 @@ namespace ZombieDefense
             _turretCell.CellTypo = CellType.Empty;
             _turretCell.AttackerTurret = null;
            Destroy(gameObject);
+        }
+
+        public void UpdateLvl()
+        {
+            _level++;
+            _cost += _cost / _costPercent;
         }
        
     }

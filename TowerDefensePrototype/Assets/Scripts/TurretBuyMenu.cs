@@ -46,6 +46,11 @@ namespace ZombieDefense
             return false;
         }
 
+        public void ClosePanel()
+        {
+            gameObject.SetActive(false);
+        }
+
 
     }
 }
