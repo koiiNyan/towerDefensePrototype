@@ -47,6 +47,9 @@ namespace ZombieDefense
 
         [SerializeField, Range (0.01f, 0.5f)]
         private float _attackDamage = 0.05f;
+
+        [SerializeField, Range (0.5f, 5f), Tooltip("Чем значение ниже, тем выше скорость атаки")]
+        private float _attackSpeed = 2f;
         #endregion
 
         private void Awake()
@@ -178,7 +181,7 @@ namespace ZombieDefense
             {
                 if (currentTurret.Health > 0) currentTurret.DealDamage(_attackDamage);
 
-                yield return new WaitForSeconds(1f);
+                yield return new WaitForSeconds(_attackSpeed);
 
                 if (currentTurret.Health <= 0)
                 {

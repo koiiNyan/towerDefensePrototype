@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace ZombieDefense
@@ -11,6 +12,8 @@ namespace ZombieDefense
 
         [SerializeField, Range(0, 1)]
         private float _hp;
+        private float _basicHp;
+        public float BasicHp { get => _basicHp; }
         private const float c_min_hp = 0f;
         private const float c_max_hp = 1f;
 
@@ -68,8 +71,38 @@ namespace ZombieDefense
 
         [SerializeField]
         private int _attackDamage = 5;
+        public int AttackDamage
+        {
+            get => _attackDamage;
+            set
+            {
+                if (value < 0)
+                {
+
+                    Debug.LogError("Attacker turrent cant have less than 0 AD!");
+                }
+                else
+                {
+                    _attackDamage = value;
+                }
+            }
+        }
         [SerializeField]
         private float _attackSpeed = 1f;
+        public float AttackSpeed { get => _attackSpeed;
+            set
+            {
+                if (value < 0)
+                {
+
+                    Debug.LogError("Attacker turrent cant have less than 0 AS!");
+                }
+                else
+                {
+                    _attackSpeed = value;
+                }
+            }
+        }
         [SerializeField]
         private Slider _hpBar;
         [SerializeField]
@@ -78,7 +111,7 @@ namespace ZombieDefense
         public int Cost { get => _cost; private set => _cost = value; }
 
         [SerializeField, Range(1, 20), Tooltip("Процент увеличения цены при повышении уровня")]
-        private int _costPercent;
+        private int _costPercent = 10;
    
 
         #endregion
@@ -87,6 +120,7 @@ namespace ZombieDefense
         {
             _enemyCell = _turretCell.GetEnemyCell;
             _enemyCell.ZombieEnterEvent += Attack;
+            _basicHp = _hp;
         }
 
 
@@ -136,7 +170,19 @@ namespace ZombieDefense
             _level++;
             _cost += _cost / _costPercent;
         }
-       
+
+
+        //Подумать, что делать, хп завязано на слайдер
+        public void UpdateHp()
+        {
+            _hp = _basicHp + 0.5f;
+            _basicHp = _hp;
+            _hpBar.maxValue = _hp;
+            _hpBar.value = _hp;
+        }
+
+
     }
+
 
 }

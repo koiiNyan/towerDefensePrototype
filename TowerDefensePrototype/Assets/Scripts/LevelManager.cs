@@ -39,7 +39,9 @@ namespace ZombieDefense
         private bool _canSpawn = true;
 
         [SerializeField]
-        private GameObject _turretUI;
+        private GameObject _turretBuyUI;
+        [SerializeField]
+        private GameObject _turretUpgradeUI;
 
         private void Awake()
         {
@@ -101,23 +103,46 @@ namespace ZombieDefense
             //В Юи - выбор башни
             //Проверять, что на клетка - 1) уже не занята башней
             // Для атакующей башни - проверять, что противоположная клетка не занята атакующей башней (через cell type)
-           else Debug.Log("Cant'build");
+           if(component.CellTypo == CellType.Attacker)
+            {
+                TurretUpgradeMenu(component.AttackerTurret);
+            }
+            
+            else Debug.Log("Cant'build");
         }
 
         private void TurretBuildMenu(Cell component)
         {
-            if (_turretUI.activeInHierarchy)
+            if (TurretUIActive())
             {
                 Debug.Log("active");
                 return;
             }
             else
             {
-                _turretUI.SetActive(true);
-                _turretUI.GetComponent<TurretBuyMenu>().ChosenCell = component;
-                _turretUI.GetComponent<TurretBuyMenu>().SetButtonActivity();
+                _turretBuyUI.SetActive(true);
+                _turretBuyUI.GetComponent<TurretBuyMenu>().ChosenCell = component;
+                _turretBuyUI.GetComponent<TurretBuyMenu>().SetButtonActivity();
             }
         }
+
+        private void TurretUpgradeMenu(AttackerTurret turret)
+        {
+            if (TurretUIActive())
+            {
+                Debug.Log("active");
+                return;
+            }
+            else
+            {
+                _turretUpgradeUI.SetActive(true);
+                _turretUpgradeUI.GetComponent<TurretUpgradeMenu>().ChosenTurret = turret;
+                _turretUpgradeUI.GetComponent<TurretUpgradeMenu>().SetButtonActivity(true);
+                _turretUpgradeUI.GetComponent<TurretUpgradeMenu>().UpdateStatsText();
+            }
+        }
+
+        private bool TurretUIActive() => (_turretUpgradeUI.activeInHierarchy || _turretBuyUI.activeInHierarchy);
 
 
         public void CreateAttackerTurret(Cell component, Vector3 cellPosition) //TODO

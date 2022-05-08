@@ -509,6 +509,8 @@ MonoBehaviour:
   _attackDamage: 5
   _attackSpeed: 3
   _hpBar: {fileID: 264412603}
+  _cost: 20
+  _costPercent: 10
 --- !u!1 &6916199308335554278
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,6 +11,8 @@ namespace ZombieDefense
         private int _currentMoney;
         [SerializeField]
         private TextMeshProUGUI _moneyText;
+        [SerializeField]
+        private GameObject _turretUpgradeMenu;
         public int Money
         {
             get => _currentMoney;
@@ -53,13 +55,16 @@ namespace ZombieDefense
         private void UpdateMoneyText()
         {
             _moneyText.text = _currentMoney.ToString();
+            if (_turretUpgradeMenu.activeInHierarchy) _turretUpgradeMenu.GetComponent<TurretUpgradeMenu>().EnoughMoney(_currentMoney);
         }
 
         public void AddMoney(int money)
         {
             _currentMoney += money;
             UpdateMoneyText();
+
         }
+
 
         public void SetZombieMissed()
         {
@@ -69,5 +74,6 @@ namespace ZombieDefense
 
         public event GameOverEvent GameOverEventHandler;
         public delegate void GameOverEvent();
+
     }
 }
