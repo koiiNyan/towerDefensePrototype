@@ -35,11 +35,16 @@ namespace ZombieDefense
         private int _zombiesMissed = 0;
         private const int _zombiesMissedToLose = 20;
 
+
         private void Awake()
         {
             _currentMoney = 20;
             UpdateMoneyText();
             StartCoroutine(AddMoneyPassively());
+        }
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Escape)) Pause();
         }
 
         private IEnumerator AddMoneyPassively()
@@ -74,6 +79,16 @@ namespace ZombieDefense
 
         public event GameOverEvent GameOverEventHandler;
         public delegate void GameOverEvent();
+
+        public event PauseEvent PauseEventHandler;
+        public delegate void PauseEvent();
+
+
+        private void Pause()
+        {
+            PauseEventHandler?.Invoke();
+        }
+
 
     }
 }

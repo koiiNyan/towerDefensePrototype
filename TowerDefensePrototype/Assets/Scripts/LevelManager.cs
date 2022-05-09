@@ -42,6 +42,10 @@ namespace ZombieDefense
         private GameObject _turretBuyUI;
         [SerializeField]
         private GameObject _turretUpgradeUI;
+        [SerializeField]
+        private GameObject _pauseUI;
+        [SerializeField]
+        private GameObject _gameOverUI;
 
         private void Awake()
         {
@@ -90,6 +94,7 @@ namespace ZombieDefense
                 cell.OnClickEventHandler += SelectActionCellComponent;
             }
             _player.GameOverEventHandler += GameOver;
+            _player.PauseEventHandler += Pause;
         }
 
         public void SelectActionCellComponent(Cell component)
@@ -283,10 +288,13 @@ namespace ZombieDefense
 
         private void GameOver()
         {
-#if UNITY_EDITOR
-            Debug.Log("GAMEOVER");
-            UnityEditor.EditorApplication.isPlaying = false;
-#endif
+            _gameOverUI.SetActive(true);
+        }
+
+        private void Pause()
+        {
+            _pauseUI.SetActive(!_pauseUI.activeInHierarchy);
+            Time.timeScale = _pauseUI.activeInHierarchy ? 0 : 1;
         }
 
     }
