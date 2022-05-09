@@ -35,6 +35,9 @@ namespace ZombieDefense
         private int _zombiesMissed = 0;
         private const int _zombiesMissedToLose = 20;
 
+        private bool _gameActive = true;
+        public bool GameActive { get => _gameActive; private set => _gameActive = value; }
+
 
         private void Awake()
         {
@@ -49,11 +52,12 @@ namespace ZombieDefense
 
         private IEnumerator AddMoneyPassively()
         {
-            while (true)
+            while (_gameActive)
             {
                 yield return new WaitForSeconds(5f);
                 _currentMoney += _moneyPerSec;
                 UpdateMoneyText();
+                Debug.Log("!!!!!!!!!!!Adding Money Passively!!!!!!!!!!!");
             }
         }
 
@@ -74,7 +78,11 @@ namespace ZombieDefense
         public void SetZombieMissed()
         {
             _zombiesMissed++;
-            if (_zombiesMissed >= _zombiesMissedToLose) GameOverEventHandler?.Invoke();
+            if (_zombiesMissed >= _zombiesMissedToLose)
+            {
+                GameOverEventHandler?.Invoke();
+                _gameActive = false;
+            }
         }
 
         public event GameOverEvent GameOverEventHandler;

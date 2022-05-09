@@ -114,6 +114,8 @@ namespace ZombieDefense
         private int _costPercent = 10;
    
 
+
+
         #endregion
 
         private void Start()

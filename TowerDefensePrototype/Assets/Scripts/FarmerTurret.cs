@@ -58,7 +58,7 @@ namespace ZombieDefense
         private IEnumerator AddMoneyToPlayer()
         {
             var playerComponent = GameObject.Find("Player").GetComponent<Player>();
-           while (true)
+           while (playerComponent.GameActive)
             {
                 Debug.Log("Adding Money!!!!");
                 playerComponent.AddMoney(_moneyPerTick);

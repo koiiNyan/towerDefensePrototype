@@ -47,6 +47,9 @@ namespace ZombieDefense
         [SerializeField]
         private GameObject _gameOverUI;
 
+        private bool _gameActive = true;
+        public bool GameActive { get => _gameActive; private set => _gameActive = value; }
+
         private void Awake()
         {
             _player = GameObject.Find("Player").GetComponent<Player>();
@@ -62,7 +65,7 @@ namespace ZombieDefense
         private void Update()
         {
             var zombiesCount = FindObjectsOfType<Zombie>().Length;
-            if (zombiesCount == 0)
+            if (zombiesCount == 0 && _gameActive)
             {
                 Timer();
             }
@@ -228,7 +231,7 @@ namespace ZombieDefense
         private IEnumerator SpawnEnemies()
         {
 
-            while (_canSpawn) //TODO
+            while (_canSpawn && _gameActive) //TODO
             {
                 _currentWawe++;
                 UpdateSpawnText();
@@ -288,7 +291,10 @@ namespace ZombieDefense
 
         private void GameOver()
         {
+            _gameOverUI.GetComponent<GameOverPanel>().SetPlayerScore(_currentWawe);
+            _gameOverUI.GetComponent<GameOverPanel>().UpdateScoreText();
             _gameOverUI.SetActive(true);
+            _gameActive = false;
         }
 
         private void Pause()

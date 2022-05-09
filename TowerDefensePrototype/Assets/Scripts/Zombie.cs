@@ -64,7 +64,7 @@ namespace ZombieDefense
 
         private void Update()  //TODO
         {
-            if (walking) Move();
+            if (walking && _player.GameActive) Move();
             if (dead) Die();
 
 
