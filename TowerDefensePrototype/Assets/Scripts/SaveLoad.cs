@@ -47,6 +47,7 @@ namespace ZombieDefense
             public static void SaveScore(string name, int points)
             {
                 ScoreTable data = LoadScore();
+                if (data == null) data = new ScoreTable();
 
                 Score newScore = new Score(name, points);
 

@@ -36,7 +36,7 @@ namespace ZombieDefense
         private const int _zombiesMissedToLose = 20;
 
         private bool _gameActive = true;
-        public bool GameActive { get => _gameActive; private set => _gameActive = value; }
+        public bool GameActive { get => _gameActive; set => _gameActive = value; }
 
 
         private void Awake()
@@ -80,13 +80,13 @@ namespace ZombieDefense
             _zombiesMissed++;
             if (_zombiesMissed >= _zombiesMissedToLose)
             {
-                GameOverEventHandler?.Invoke();
+                GameOverEventHandler?.Invoke(false);
                 _gameActive = false;
             }
         }
 
         public event GameOverEvent GameOverEventHandler;
-        public delegate void GameOverEvent();
+        public delegate void GameOverEvent(bool IsWin);
 
         public event PauseEvent PauseEventHandler;
         public delegate void PauseEvent();

@@ -13,6 +13,12 @@ namespace ZombieDefense
         private int _playerScore;
         [SerializeField]
         private Text _highscoresText;
+        [SerializeField]
+        private Button _saveBtn;
+        [SerializeField]
+        private InputField _playerName;
+        [SerializeField]
+        private Text _gameOverText;
 
 
 
@@ -42,6 +48,18 @@ namespace ZombieDefense
 
         public void SetPlayerScore(int value) => _playerScore = value;
 
+
+        public void SaveButton()
+        {
+            if (_playerName.text == "") return;
+            else
+            {
+                SaveLoad.SaveScore(_playerName.text, _playerScore);
+                _saveBtn.interactable = false;
+                PrintScores();
+            }
+        }
+
         public void RestartButton()
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -69,5 +87,8 @@ namespace ZombieDefense
         {
             _scoreText.text = $"Your Score: {_playerScore}";
         }
+
+        public void UpdateGameOverText(bool IsWin) => _gameOverText.text = IsWin ? "YOU WIN!" : "YOU LOST!";
+
     }
 }

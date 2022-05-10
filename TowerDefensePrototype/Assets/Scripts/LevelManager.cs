@@ -27,6 +27,9 @@ namespace ZombieDefense
         private Player _player;
 
         [SerializeField]
+        private const int _waveToWin = 21;
+        
+        [SerializeField]
         private int _currentWawe = 0;
         [SerializeField]
         private TextMeshProUGUI _waveText;
@@ -235,17 +238,26 @@ namespace ZombieDefense
             {
                 _currentWawe++;
                 UpdateSpawnText();
-                for (int i = 0; i < _amountToPool; i++)
+                if (_currentWawe == _waveToWin)
                 {
-                    GameObject pooledZombie = GetPooledObject();
-                    if (pooledZombie != null)
+                    GameOver(true);
+                    _player.GameActive = false;
+                    yield return null;
+                }
+                else
+                { 
+                    for (int i = 0; i < _amountToPool; i++)
                     {
-                        pooledZombie.SetActive(true);
-                        pooledZombie.transform.position = pooledZombie.GetComponent<Zombie>().InitialPosition; //TODO
-                        pooledZombie.GetComponent<Zombie>().SetMoveSpeedAnimator(true);//TODO
-                    }
+                        GameObject pooledZombie = GetPooledObject();
+                        if (pooledZombie != null)
+                        {
+                            pooledZombie.SetActive(true);
+                            pooledZombie.transform.position = pooledZombie.GetComponent<Zombie>().InitialPosition; //TODO
+                            pooledZombie.GetComponent<Zombie>().SetMoveSpeedAnimator(true);//TODO
+                        }
 
-                    yield return new WaitForSeconds(_spawnSeconds);
+                        yield return new WaitForSeconds(_spawnSeconds);
+                    }
                 }
                 _canSpawn = false;
 
@@ -289,10 +301,11 @@ namespace ZombieDefense
         }
 
 
-        private void GameOver()
+        private void GameOver(bool IsWin)
         {
             _gameOverUI.GetComponent<GameOverPanel>().SetPlayerScore(_currentWawe);
             _gameOverUI.GetComponent<GameOverPanel>().UpdateScoreText();
+            _gameOverUI.GetComponent<GameOverPanel>().UpdateGameOverText(IsWin);
             _gameOverUI.SetActive(true);
             _gameActive = false;
         }
