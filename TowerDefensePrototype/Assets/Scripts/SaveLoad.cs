@@ -72,7 +72,12 @@ namespace ZombieDefense
 
 
 
-            public static IEnumerable<Score> GetHighestScores() => LoadScore().Scores.OrderByDescending(s => s.Points).Take(10);
+        public static IEnumerable<Score> GetHighestScores()
+        {
+            ScoreTable scores = LoadScore();
+            if (scores != null) return scores.Scores.OrderByDescending(s => s.Points).Take(10);
+            else return null;
+        }
 
         }
     }

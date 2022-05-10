@@ -11,6 +11,34 @@ namespace ZombieDefense
         [SerializeField]
         private Text _scoreText;
         private int _playerScore;
+        [SerializeField]
+        private Text _highscoresText;
+
+
+
+        private void Awake()
+        {
+            PrintScores();
+        }
+
+        private void PrintScores()
+        {
+            string scoresString = string.Empty;
+
+            var scores = SaveLoad.GetHighestScores();
+
+            if (scores == null) scoresString = "No scores recorded";
+
+            else
+            {
+                foreach (var score in scores)
+                    scoresString += $"{score.Name}: {score.Points}\n";
+            }
+            
+
+            _highscoresText.text = scoresString;
+        }
+
 
         public void SetPlayerScore(int value) => _playerScore = value;
 
