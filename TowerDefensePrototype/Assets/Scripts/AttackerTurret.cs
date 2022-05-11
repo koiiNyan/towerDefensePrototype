@@ -183,6 +183,12 @@ namespace ZombieDefense
             _hpBar.value = _hp;
         }
 
+        public void HealTurret()
+        {
+            _hp = _basicHp;
+            _hpBar.value = _hp;
+        }
+
 
     }
 

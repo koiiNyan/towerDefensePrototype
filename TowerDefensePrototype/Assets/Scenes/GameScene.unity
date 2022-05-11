@@ -12031,8 +12031,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healTurretsBtn: {fileID: 0}
   _invulnerabilityBtn: {fileID: 0}
-  _healTurretsBtnCD: 1
-  _invulnerabilityBtnCD: 1
+  _healTurretsBtnCD: 5
+  _invulnerabilityBtnCD: 5
 --- !u!1001 &1767574773
 PrefabInstance:
   m_ObjectHideFlags: 0

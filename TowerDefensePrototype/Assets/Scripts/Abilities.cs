@@ -13,14 +13,24 @@ namespace ZombieDefense
         private Button _invulnerabilityBtn;
 
         [SerializeField]
-        private float _healTurretsBtnCD = 1f;
+        private float _healTurretsBtnCD = 5f;
         [SerializeField]
-        private float _invulnerabilityBtnCD = 1f;
+        private float _invulnerabilityBtnCD = 5f;
+        [SerializeField]
+        private float _invulnerabilityDuration = 2f;
 
         public void HealTurretButton()
         {
             Debug.Log("HealTurretButton()");
+            var allTurrets = FindObjectsOfType<AttackerTurret>();
+            foreach (AttackerTurret turret in allTurrets)
+            {
+                turret.HealTurret();
+            }
+            StartCoroutine(AbilityCD(_healTurretsBtn, _healTurretsBtnCD));
         }
+
+
 
         public void InvulnerabilityButton()
         {
@@ -30,9 +40,19 @@ namespace ZombieDefense
 
         //Если нет денег или кд - кнопки неактивны. Если игра закончена - кнопки неактивны
 
-        public void SetButtonActivity()
+        private IEnumerator AbilityCD(Button btn, float cd)
         {
-
+            btn.interactable = false;
+            yield return new WaitForSeconds(cd);
+            btn.interactable = true;
         }
+
+        private IEnumerator MakePlayerInvinsible()
+        {
+            /// +++ inv
+            yield return new WaitForSeconds(1f);
+            /// ---- inv
+        }
+
     }
 }
