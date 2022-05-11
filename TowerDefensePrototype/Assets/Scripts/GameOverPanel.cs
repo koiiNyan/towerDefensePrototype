@@ -67,8 +67,7 @@ namespace ZombieDefense
 
         public void MenuButton()
         {
-            //SceneManager.LoadScene(0);
-            Debug.Log("MenuButton");
+            SceneManager.LoadScene(0);
         }
 
         public void ExitButton()
