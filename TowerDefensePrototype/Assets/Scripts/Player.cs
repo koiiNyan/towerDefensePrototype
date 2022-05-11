@@ -38,6 +38,9 @@ namespace ZombieDefense
         private bool _gameActive = true;
         public bool GameActive { get => _gameActive; set => _gameActive = value; }
 
+        private bool _notInvulnerable = true;
+        public bool NotInvulnerable { get => _notInvulnerable; set => _notInvulnerable = value; }
+
 
         private void Awake()
         {
@@ -77,7 +80,7 @@ namespace ZombieDefense
 
         public void SetZombieMissed()
         {
-            _zombiesMissed++;
+            if(_notInvulnerable) _zombiesMissed++;
             if (_zombiesMissed >= _zombiesMissedToLose)
             {
                 GameOverEventHandler?.Invoke(false);

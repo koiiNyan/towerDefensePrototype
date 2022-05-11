@@ -17,7 +17,13 @@ namespace ZombieDefense
         [SerializeField]
         private float _invulnerabilityBtnCD = 5f;
         [SerializeField]
-        private float _invulnerabilityDuration = 2f;
+        private float _invulnerabilityDuration = 5f;
+
+        [SerializeField]
+        private GameObject _player;
+
+        [SerializeField]
+        private Text _invulnerabilityText;
 
         public void HealTurretButton()
         {
@@ -34,7 +40,8 @@ namespace ZombieDefense
 
         public void InvulnerabilityButton()
         {
-            Debug.Log("InvulnerabilityButton()");
+            StartCoroutine(AbilityCD(_invulnerabilityBtn, _invulnerabilityBtnCD));
+            StartCoroutine(MakePlayerInvulnerable());
         }
 
 
@@ -47,11 +54,13 @@ namespace ZombieDefense
             btn.interactable = true;
         }
 
-        private IEnumerator MakePlayerInvinsible()
+        private IEnumerator MakePlayerInvulnerable()
         {
-            /// +++ inv
-            yield return new WaitForSeconds(1f);
-            /// ---- inv
+            _player.GetComponent<Player>().NotInvulnerable = false;
+            _invulnerabilityText.gameObject.SetActive(true);
+            yield return new WaitForSeconds(_invulnerabilityDuration);
+            _player.GetComponent<Player>().NotInvulnerable = true;
+            _invulnerabilityText.gameObject.SetActive(false);
         }
 
     }

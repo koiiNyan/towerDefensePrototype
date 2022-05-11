@@ -12029,10 +12029,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab67d3fc2c0887142bfe2bb6dfd215d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healTurretsBtn: {fileID: 0}
-  _invulnerabilityBtn: {fileID: 0}
+  _healTurretsBtn: {fileID: 336531964}
+  _invulnerabilityBtn: {fileID: 1945694455}
   _healTurretsBtnCD: 5
   _invulnerabilityBtnCD: 5
+  _invulnerabilityDuration: 2
+  _player: {fileID: 584195277}
 --- !u!1001 &1767574773
 PrefabInstance:
   m_ObjectHideFlags: 0
