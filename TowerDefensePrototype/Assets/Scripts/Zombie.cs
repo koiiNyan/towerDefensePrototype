@@ -55,7 +55,7 @@ namespace ZombieDefense
 
         [SerializeField]
         private EnemyType _enemyType = EnemyType.Normal;
-        public EnemyType EnemyTypo { get => _enemyType; }
+        public EnemyType ZombieType { get => _enemyType; }
 
         #endregion
 

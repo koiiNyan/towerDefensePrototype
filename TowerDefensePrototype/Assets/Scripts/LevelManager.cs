@@ -19,9 +19,11 @@ namespace ZombieDefense
 
         private List<GameObject> _pooledObjects;
         [SerializeField]
-        private GameObject _objectToPool;
-        [SerializeField]
+        private GameObject[] _objectsToPool;
+        [SerializeField, Tooltip("Сколько объектов отправлять в пул, от 20")]
         private int _amountToPool;
+        [SerializeField]
+        private int _zombiesPerWave = 10;
 
 
         private Player _player;
@@ -209,21 +211,35 @@ namespace ZombieDefense
 
         private void CreateEnemiesPool()
         {
+            _amountToPool++;
             _pooledObjects = new List<GameObject>();
             for (int i = 0; i < _amountToPool; i++)
             {
-                GameObject obj = (GameObject)Instantiate(_objectToPool);
+                GameObject obj = null;
+                if (i < _amountToPool / 2)
+                {
+                    obj = (GameObject)Instantiate(_objectsToPool[0]); // Pool normal Zombie
+                }
+                else if (i > _amountToPool /2 && i <= _amountToPool-1)
+                {
+                    obj = (GameObject)Instantiate(_objectsToPool[1]); // Pool strong Zombie
+                }
+                else
+                {
+                    obj = (GameObject)Instantiate(_objectsToPool[2]); // Pool boss Zombie
+                }
+                
                 obj.SetActive(false);
                 _pooledObjects.Add(obj);
                 obj.transform.SetParent(GameObject.Find("Enemies").transform); //TODO
             }
         }
 
-        private GameObject GetPooledObject()
+        private GameObject GetPooledObject(EnemyType zombieType)
         {
             for (int i = 0; i < _pooledObjects.Count; i++)
             {
-                if (!_pooledObjects[i].activeInHierarchy)
+                if (!_pooledObjects[i].activeInHierarchy && _pooledObjects[i].GetComponent<Zombie>().ZombieType == zombieType)
                 {
                     return _pooledObjects[i];
                 }
@@ -246,9 +262,9 @@ namespace ZombieDefense
                 }
                 else
                 { 
-                    for (int i = 0; i < _amountToPool; i++)
+                    for (int i = 0; i < _zombiesPerWave; i++)
                     {
-                        GameObject pooledZombie = GetPooledObject();
+                        GameObject pooledZombie = GetPooledObject(EnemyType.Normal);
                         if (pooledZombie != null)
                         {
                             pooledZombie.SetActive(true);

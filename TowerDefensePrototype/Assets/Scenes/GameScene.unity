@@ -9981,8 +9981,12 @@ MonoBehaviour:
   _allCells: []
   _attackerTurretPrefab: {fileID: 6916111542804385794, guid: ff6701f447dbc4241987dfb2749e4dfb, type: 3}
   _farmerTurretPrefab: {fileID: 6916111542804385794, guid: 6aadd2b3fc2967845af92a6a52a2d142, type: 3}
-  _objectToPool: {fileID: 8300911614584933182, guid: af07a41d27cc44a46937483b3da7b90c, type: 3}
-  _amountToPool: 10
+  _objectsToPool:
+  - {fileID: 8300911614584933182, guid: af07a41d27cc44a46937483b3da7b90c, type: 3}
+  - {fileID: 8300911614584933182, guid: 698108b2aabd4ec42a1f628851f8de34, type: 3}
+  - {fileID: 8300911614584933182, guid: d9a3506b1f4cdb546bd272812ce50435, type: 3}
+  _amountToPool: 20
+  _zombiesPerWave: 10
   _currentWawe: 0
   _waveText: {fileID: 1072383159}
   _spawnSeconds: 1
