@@ -43,6 +43,13 @@ namespace ZombieDefense
 
         private bool _canSpawn = true;
 
+        [SerializeField, Tooltip ("Сильный зомби спавнится каждую N волну")]
+        private int _strongZombieSpawnWave = 3;
+        [SerializeField, Tooltip("Босс зомби спавнится каждую N волну. Число должно быть кратно 10")]
+        private int _bossZombieSpawnWave = 10;
+        [SerializeField, Tooltip("С какой волны начинается рандом во врагах")]
+        private int _randomWave = 11;
+
         [SerializeField]
         private GameObject _turretBuyUI;
         [SerializeField]
@@ -261,10 +268,23 @@ namespace ZombieDefense
                     yield return null;
                 }
                 else
-                { 
+                {
+                    EnemyType zombieType;
+
+                    if (_currentWawe % _bossZombieSpawnWave == 0) zombieType = EnemyType.Boss;
+                    else if (_currentWawe % _strongZombieSpawnWave == 0) zombieType = EnemyType.Strong;
+                    else zombieType = EnemyType.Normal;
+
                     for (int i = 0; i < _zombiesPerWave; i++)
                     {
-                        GameObject pooledZombie = GetPooledObject(EnemyType.Normal);
+                        if (zombieType == EnemyType.Boss && i > 0) zombieType = EnemyType.Normal;
+                        
+                        if ( _currentWawe >= _randomWave && (zombieType == EnemyType.Normal || zombieType == EnemyType.Strong))
+                        {
+                            int xyz = Random.Range(0, 2);
+                            zombieType = (EnemyType)xyz;
+                        }
+                        GameObject pooledZombie = GetPooledObject(zombieType);
                         if (pooledZombie != null)
                         {
                             pooledZombie.SetActive(true);

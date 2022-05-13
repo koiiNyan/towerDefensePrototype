@@ -33,7 +33,7 @@ namespace ZombieDefense
         private int _moneyPerSec = 5;
 
         private int _zombiesMissed = 0;
-        private const int _zombiesMissedToLose = 20;
+        private const int _zombiesMissedToLose = 300;
 
         private bool _gameActive = true;
         public bool GameActive { get => _gameActive; set => _gameActive = value; }
