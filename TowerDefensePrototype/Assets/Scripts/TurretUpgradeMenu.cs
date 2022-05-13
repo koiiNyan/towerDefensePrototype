@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -30,9 +30,20 @@ namespace ZombieDefense
 
         private Player _player;
 
+        [SerializeField]
+        private GameObject _turretStatsPanel;
+        [SerializeField]
+        private GameObject _turretTypePanel;
+
         private void Awake()
         {
             _player = GameObject.Find("Player").GetComponent<Player>();
+        }
+
+        private void OnEnable()
+        {
+            _turretStatsPanel.SetActive(true);
+            _turretTypePanel.SetActive(false);
         }
 
         public void ClosePanel()
@@ -49,18 +60,18 @@ namespace ZombieDefense
             _turretASText.text = $"Attack Speed: {_chosenTurret.AttackSpeed}";
 
 
-            if (_chosenTurret.Cost > _player.Money) SetButtonActivity(false);
-            if (_chosenTurret.CurrentLevel >= 5) SetButtonActivity(false);
+            if (_chosenTurret.Cost > _player.Money) SetUpgradeButtonActivity(false);
+            if (_chosenTurret.CurrentLevel >= 5 && _chosenTurret.TurretType == AttackerType.None) OpenTurretType();
 
 
         }
 
         public void EnoughMoney(int money)
         {
-            if (money >= _chosenTurret.Cost) SetButtonActivity(true);
+            if (money >= _chosenTurret.Cost) SetUpgradeButtonActivity(true);
         }
 
-        public void SetButtonActivity(bool active)
+        public void SetUpgradeButtonActivity(bool active)
         {
             foreach (Button btn in _upgradeButtons)
                 btn.interactable = active;
@@ -85,6 +96,23 @@ namespace ZombieDefense
             _chosenTurret.UpdateHp();
             _chosenTurret.UpdateLvl();
             UpdateStatsText();
+        }
+
+        private void OpenTurretType()
+        {
+            // Открывать плашку с выбором башни (список)
+            // В зависимости от выбранного значения в списке, показывать информационные статы
+            // При нажатии на плюс вызывать метод из башни на изменение статов башни
+            
+            SetUpgradeButtonActivity(false);
+            _turretStatsPanel.SetActive(false);
+            _turretTypePanel.SetActive(true);
+
+        }
+
+        public void SetTurretType()
+        {
+
         }
 
     }

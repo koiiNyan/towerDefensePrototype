@@ -114,7 +114,10 @@ namespace ZombieDefense
         private int _costPercent = 10;
 
         private AttackerType _turretType = AttackerType.None;
+        public AttackerType TurretType => _turretType;
 
+        [SerializeField]
+        private GameObject _turretTypeMark;
 
         #endregion
 
@@ -186,12 +189,27 @@ namespace ZombieDefense
             _hpBar.value = _hp;
         }
 
-
-        [ContextMenu("SetTurretType")] //TODO
-        public void SetTurretType()//AttackerType turretType)
+        public void SetTurretType(AttackerType turretType)
         {
-            //_turretType = turretType;
-            //Включать круг цвета, соответствующего типу. В корутине атаки доработать логику в зависимости от типа башни
+            _turretType = turretType;
+            _turretTypeMark.SetActive(true);
+            var meshRenderer = _turretTypeMark.GetComponent<MeshRenderer>();
+
+            var tempMaterial = new Material(meshRenderer.sharedMaterial);
+            tempMaterial.color = GetColorByType(turretType);
+            meshRenderer.sharedMaterial = tempMaterial;
+        }
+
+        private Color GetColorByType(AttackerType turretType)
+        {
+            Dictionary<AttackerType, Color> colorDictionary = new Dictionary<AttackerType, Color>()
+        {
+            { AttackerType.Fire , Color.red },
+            { AttackerType.Ice, Color.blue },
+            { AttackerType.Electricity, Color.magenta },
+        };
+
+            return colorDictionary[turretType];
         }
 
     }

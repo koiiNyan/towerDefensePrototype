@@ -157,7 +157,7 @@ namespace ZombieDefense
             {
                 _turretUpgradeUI.SetActive(true);
                 _turretUpgradeUI.GetComponent<TurretUpgradeMenu>().ChosenTurret = turret;
-                _turretUpgradeUI.GetComponent<TurretUpgradeMenu>().SetButtonActivity(true);
+                _turretUpgradeUI.GetComponent<TurretUpgradeMenu>().SetUpgradeButtonActivity(true);
                 _turretUpgradeUI.GetComponent<TurretUpgradeMenu>().UpdateStatsText();
             }
         }
@@ -281,8 +281,8 @@ namespace ZombieDefense
                         
                         if ( _currentWawe >= _randomWave && (zombieType == EnemyType.Normal || zombieType == EnemyType.Strong))
                         {
-                            int xyz = Random.Range(0, 2);
-                            zombieType = (EnemyType)xyz;
+                            int randomInt = Random.Range(0, 2);
+                            zombieType = (EnemyType)randomInt;
                         }
                         GameObject pooledZombie = GetPooledObject(zombieType);
                         if (pooledZombie != null)
