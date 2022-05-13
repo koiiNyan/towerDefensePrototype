@@ -8,4 +8,19 @@ namespace ZombieDefense
         Farmer
     }
 
+    public enum EnemyType : byte
+    {
+        Normal,
+        Strong,
+        Boss
+    }
+
+    public enum AttackerType : byte
+    {
+        None,
+        Fire,
+        Ice,
+        Electricity
+    }
+
 }

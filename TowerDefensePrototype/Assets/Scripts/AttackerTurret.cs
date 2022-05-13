@@ -112,8 +112,8 @@ namespace ZombieDefense
 
         [SerializeField, Range(1, 20), Tooltip("Процент увеличения цены при повышении уровня")]
         private int _costPercent = 10;
-   
 
+        private AttackerType _turretType = AttackerType.None;
 
 
         #endregion
@@ -172,9 +172,6 @@ namespace ZombieDefense
             _level++;
             _cost += _cost / _costPercent;
         }
-
-
-        //Подумать, что делать, хп завязано на слайдер
         public void UpdateHp()
         {
             _hp = _basicHp + 0.5f;
@@ -189,6 +186,13 @@ namespace ZombieDefense
             _hpBar.value = _hp;
         }
 
+
+        [ContextMenu("SetTurretType")] //TODO
+        public void SetTurretType()//AttackerType turretType)
+        {
+            //_turretType = turretType;
+            //Включать круг цвета, соответствующего типу. В корутине атаки доработать логику в зависимости от типа башни
+        }
 
     }
 

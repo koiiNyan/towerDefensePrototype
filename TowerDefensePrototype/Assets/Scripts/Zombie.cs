@@ -10,6 +10,7 @@ namespace ZombieDefense
 
         [SerializeField, Range(0, 100)]
         private int _hp = 100;
+        [SerializeField]  //TODO убрать серилизацию
         private int _currentHp;
         private const int c_min_hp = 0;
         private const int c_max_hp = 100;
@@ -50,6 +51,12 @@ namespace ZombieDefense
 
         [SerializeField, Range (0.5f, 5f), Tooltip("Чем значение ниже, тем выше скорость атаки")]
         private float _attackSpeed = 2f;
+
+
+        [SerializeField]
+        private EnemyType _enemyType = EnemyType.Normal;
+        public EnemyType EnemyTypo { get => _enemyType; }
+
         #endregion
 
         private void Awake()

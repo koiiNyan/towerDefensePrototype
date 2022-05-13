@@ -558,6 +558,8 @@ MonoBehaviour:
   _moveSpeed: 1
   _money: 5
   _attackDamage: 0.15
+  _attackSpeed: 2
+  _enemyType: 1
 --- !u!54 &-4686160801098187020
 Rigidbody:
   m_ObjectHideFlags: 0
