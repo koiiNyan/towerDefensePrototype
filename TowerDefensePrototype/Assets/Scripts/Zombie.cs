@@ -160,6 +160,7 @@ namespace ZombieDefense
 
                 var normalDistance = new Vector3(0.5f, 0f, distance.z);
 
+                if (transform.position.z > normalDistance.z) normalDistance = _player.transform.position;
                 
                 return normalDistance;
             }
