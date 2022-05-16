@@ -11,6 +11,8 @@ namespace ZombieDefense
         private Button _healTurretsBtn;
         [SerializeField]
         private Button _invulnerabilityBtn;
+        [SerializeField]
+        private Button _damageBtn;
 
         [SerializeField]
         private float _healTurretsBtnCD = 5f;
@@ -18,6 +20,15 @@ namespace ZombieDefense
         private float _invulnerabilityBtnCD = 5f;
         [SerializeField]
         private float _invulnerabilityDuration = 5f;
+        [SerializeField]
+        private float _damageBtnCD = 5f;
+
+        [SerializeField]
+        private int _invulnerabilityCost = 100;
+        [SerializeField]
+        private int _damageCost = 100;
+        [SerializeField]
+        private int _damage = 10;
 
         [SerializeField]
         private GameObject _player;
@@ -40,9 +51,27 @@ namespace ZombieDefense
 
         public void InvulnerabilityButton()
         {
-            StartCoroutine(AbilityCD(_invulnerabilityBtn, _invulnerabilityBtnCD));
-            StartCoroutine(MakePlayerInvulnerable());
+            if (_player.GetComponent<Player>().Money >= _invulnerabilityCost)
+            {
+                StartCoroutine(AbilityCD(_invulnerabilityBtn, _invulnerabilityBtnCD));
+                StartCoroutine(MakePlayerInvulnerable());
+            }
         }
+
+        public void DealDamageButton()
+        {
+            if (_player.GetComponent<Player>().Money >= _damageCost)
+            {
+                Debug.Log("DealDamageButton()");
+                var allEnemies = FindObjectsOfType<Zombie>();
+                foreach (Zombie zombie in allEnemies)
+                {
+                    zombie.Health -= _damage;
+                }
+                StartCoroutine(AbilityCD(_damageBtn, _damageBtnCD));
+            }
+        }
+
 
 
         //Если нет денег или кд - кнопки неактивны. Если игра закончена - кнопки неактивны
@@ -62,6 +91,8 @@ namespace ZombieDefense
             _player.GetComponent<Player>().NotInvulnerable = true;
             _invulnerabilityText.gameObject.SetActive(false);
         }
+
+
 
     }
 }
