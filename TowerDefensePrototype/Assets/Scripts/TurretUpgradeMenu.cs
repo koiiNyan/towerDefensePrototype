@@ -44,6 +44,8 @@ namespace ZombieDefense
         {
             _turretStatsPanel.SetActive(true);
             _turretTypePanel.SetActive(false);
+            SetUpgradeButtonActivity(true);
+            UpdateStatsText();
         }
 
         public void ClosePanel()
@@ -53,14 +55,13 @@ namespace ZombieDefense
 
         public void UpdateStatsText()
         {
+            if (_chosenTurret.Cost > _player.Money || _chosenTurret.CurrentLevel >= _chosenTurret.TurretMaxLevel) SetUpgradeButtonActivity(false);
             _turretLevelText.text = $"Current Level: {_chosenTurret.CurrentLevel}";
             _turretCostText.text = $"Turret Cost: {_chosenTurret.Cost}";
             _turretHPText.text = $"Health: {_chosenTurret.BasicHp}";
             _turretADText.text = $"Damage: {_chosenTurret.AttackDamage}";
             _turretASText.text = $"Attack Speed: {_chosenTurret.AttackSpeed}";
 
-
-            if (_chosenTurret.Cost > _player.Money) SetUpgradeButtonActivity(false);
             if (_chosenTurret.CurrentLevel >= 5 && _chosenTurret.TurretType == AttackerType.None) OpenTurretType();
 
 
@@ -68,10 +69,10 @@ namespace ZombieDefense
 
         public void EnoughMoney(int money)
         {
-            if (money >= _chosenTurret.Cost) SetUpgradeButtonActivity(true);
+            if (money >= _chosenTurret.Cost && _chosenTurret.CurrentLevel < _chosenTurret.TurretMaxLevel) SetUpgradeButtonActivity(true);
         }
 
-        public void SetUpgradeButtonActivity(bool active)
+        private void SetUpgradeButtonActivity(bool active)
         {
             foreach (Button btn in _upgradeButtons)
                 btn.interactable = active;
@@ -110,9 +111,10 @@ namespace ZombieDefense
 
         }
 
-        public void SetTurretType()
+        public void SetTurretType(int value)
         {
-
+            _chosenTurret.SetTurretType((AttackerType)value);
+            ClosePanel();
         }
 
     }

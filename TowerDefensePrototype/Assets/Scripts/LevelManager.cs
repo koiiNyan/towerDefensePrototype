@@ -29,7 +29,7 @@ namespace ZombieDefense
         private Player _player;
 
         [SerializeField]
-        private const int _waveToWin = 21;
+        private int _waveToWin = 21;
         
         [SerializeField]
         private int _currentWawe = 0;
@@ -157,8 +157,8 @@ namespace ZombieDefense
             {
                 _turretUpgradeUI.SetActive(true);
                 _turretUpgradeUI.GetComponent<TurretUpgradeMenu>().ChosenTurret = turret;
-                _turretUpgradeUI.GetComponent<TurretUpgradeMenu>().SetUpgradeButtonActivity(true);
-                _turretUpgradeUI.GetComponent<TurretUpgradeMenu>().UpdateStatsText();
+                //_turretUpgradeUI.GetComponent<TurretUpgradeMenu>().SetUpgradeButtonActivity(true);
+                //_turretUpgradeUI.GetComponent<TurretUpgradeMenu>().UpdateStatsText();
             }
         }
 

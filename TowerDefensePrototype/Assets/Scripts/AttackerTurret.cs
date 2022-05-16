@@ -38,13 +38,14 @@ namespace ZombieDefense
         private int _level;
         private const int c_min_lvl = 1;
         private const int c_max_lvl = 5;
+        public int TurretMaxLevel => c_max_lvl;
 
         public int CurrentLevel
         {
             get => _level;
             set
             {
-                if (value < c_min_lvl || value > c_max_lvl)
+                if (value < c_min_lvl || value >= c_max_lvl)
                 {
 
                     Debug.LogError("Attacker turret level cant be less than 1 or more than 5 lvl!");
