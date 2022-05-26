@@ -19,6 +19,10 @@ namespace ZombieDefense
         private AttackerTurret _attackerTurret;
         public AttackerTurret AttackerTurret { get => _attackerTurret; set => _attackerTurret = value; }
 
+        [SerializeField]
+        private FarmerTurret _farmerTurret;
+        public FarmerTurret FarmerTurret { get => _farmerTurret; set => _farmerTurret = value; }
+
         public void SetEnemyCell(EnemyCell enemyCell)
         {
             _pairEnemyCell = enemyCell;

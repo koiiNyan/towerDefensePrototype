@@ -43,6 +43,19 @@ namespace ZombieDefense
 
         [SerializeField]
         private int _money = 5;
+        public int Money { get => _money; set
+            {
+                if (value <= 0)
+                {
+
+                    Debug.LogError("Money per zombie can't be less than 0");
+                }
+                else
+                {
+                    _currentHp = value;
+                }
+            }
+        }
 
         private Player _player;
 

@@ -354,7 +354,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &71083435
 RectTransform:
   m_ObjectHideFlags: 0
@@ -462,6 +462,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &75943627
 BoxCollider:
@@ -558,6 +559,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &85010182
 BoxCollider:
@@ -764,6 +766,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &93333465
 BoxCollider:
@@ -1168,6 +1171,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &147968619
 BoxCollider:
@@ -1497,6 +1501,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &165951200
 BoxCollider:
@@ -1593,6 +1598,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &166201468
 BoxCollider:
@@ -1689,6 +1695,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &180977689
 BoxCollider:
@@ -1878,6 +1885,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &196587853
 BoxCollider:
@@ -1974,6 +1982,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &207361014
 BoxCollider:
@@ -2107,6 +2116,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &229508710
 BoxCollider:
@@ -2398,6 +2408,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &270859489
 BoxCollider:
@@ -2556,6 +2567,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &277854681
 BoxCollider:
@@ -2884,7 +2896,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -30, y: -110}
+  m_AnchoredPosition: {x: -60, y: -110}
   m_SizeDelta: {x: 48, y: 48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &336531964
@@ -3094,6 +3106,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &346546925
 BoxCollider:
@@ -3488,6 +3501,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &368510691
 BoxCollider:
@@ -3708,6 +3722,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &468467711
 BoxCollider:
@@ -3968,6 +3983,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &499244447
 BoxCollider:
@@ -4064,6 +4080,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &521697469
 BoxCollider:
@@ -4385,6 +4402,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &541926587
 BoxCollider:
@@ -4543,6 +4561,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &578590324
 BoxCollider:
@@ -4764,6 +4783,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &609482052
 BoxCollider:
@@ -4941,6 +4961,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &661182576
 BoxCollider:
@@ -5068,6 +5089,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &686317383
 BoxCollider:
@@ -5336,6 +5358,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &706398358
 BoxCollider:
@@ -5512,6 +5535,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &717567673
 BoxCollider:
@@ -5608,6 +5632,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &748464288
 BoxCollider:
@@ -5797,6 +5822,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &826958727
 BoxCollider:
@@ -5893,6 +5919,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &830454486
 BoxCollider:
@@ -5989,6 +6016,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &830526491
 BoxCollider:
@@ -6616,6 +6644,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &879943389
 BoxCollider:
@@ -7018,6 +7047,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &916841204
 BoxCollider:
@@ -7269,6 +7299,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &951723366
 BoxCollider:
@@ -7716,6 +7747,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &996134015
 BoxCollider:
@@ -7812,6 +7844,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &1010087467
 BoxCollider:
@@ -8375,6 +8408,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &1167754947
 BoxCollider:
@@ -8471,6 +8505,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &1190064165
 BoxCollider:
@@ -8742,6 +8777,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &1206962124
 BoxCollider:
@@ -8869,6 +8905,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &1208179573
 BoxCollider:
@@ -9089,6 +9126,138 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &1220824487
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1220824488}
+  - component: {fileID: 1220824491}
+  - component: {fileID: 1220824490}
+  - component: {fileID: 1220824489}
+  m_Layer: 0
+  m_Name: DamageButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1220824488
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220824487}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1746053586}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 60, y: -110}
+  m_SizeDelta: {x: 51.8689, y: 52.207}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1220824489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220824487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1220824490}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1746053587}
+        m_TargetAssemblyTypeName: ZombieDefense.Abilities, Assembly-CSharp
+        m_MethodName: DealDamageButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1220824490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220824487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 2cbcf26037657ac4b96e7e8b27390a5f, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1220824491
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220824487}
+  m_CullTransparentMesh: 1
 --- !u!1 &1220907112
 GameObject:
   m_ObjectHideFlags: 0
@@ -9206,6 +9375,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &1224838296
 BoxCollider:
@@ -9515,6 +9685,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &1253243634
 BoxCollider:
@@ -9642,6 +9813,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &1272241743
 BoxCollider:
@@ -9738,6 +9910,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &1282913472
 BoxCollider:
@@ -9913,6 +10086,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &1293866501
 BoxCollider:
@@ -10009,6 +10183,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &1295125958
 BoxCollider:
@@ -10637,6 +10812,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &1362452447
 BoxCollider:
@@ -11004,6 +11180,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &1513776171
 BoxCollider:
@@ -11193,6 +11370,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &1535360173
 BoxCollider:
@@ -11320,6 +11498,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &1552748995
 BoxCollider:
@@ -11478,6 +11657,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &1592226824
 BoxCollider:
@@ -11728,6 +11908,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &1624400302
 BoxCollider:
@@ -11824,6 +12005,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &1634040683
 BoxCollider:
@@ -12392,6 +12574,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &1706930284
 BoxCollider:
@@ -12817,6 +13000,7 @@ RectTransform:
   - {fileID: 336531963}
   - {fileID: 1945694454}
   - {fileID: 1471727347}
+  - {fileID: 1220824488}
   m_Father: {fileID: 911696388}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12839,9 +13023,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healTurretsBtn: {fileID: 336531964}
   _invulnerabilityBtn: {fileID: 1945694455}
+  _damageBtn: {fileID: 1220824489}
   _healTurretsBtnCD: 5
   _invulnerabilityBtnCD: 5
   _invulnerabilityDuration: 2
+  _damageBtnCD: 5
+  _invulnerabilityCost: 100
+  _damageCost: 100
+  _damage: 10
   _player: {fileID: 584195277}
   _invulnerabilityText: {fileID: 1471727348}
 --- !u!1001 &1767574773
@@ -12926,6 +13115,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &1767574777
 BoxCollider:
@@ -13022,6 +13212,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &1776569958
 BoxCollider:
@@ -13335,6 +13526,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &1825639125
 BoxCollider:
@@ -13595,6 +13787,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &1867985950
 BoxCollider:
@@ -13821,6 +14014,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &1909256333
 BoxCollider:
@@ -13901,6 +14095,8 @@ MonoBehaviour:
   _attackSpeedPerLvl: 2
   _turretStatsPanel: {fileID: 836628102}
   _turretTypePanel: {fileID: 1934028735}
+  _turretStatsPanelAttacker: {fileID: 71083434}
+  _turretStatsPanelFarmer: {fileID: 1739984277}
 --- !u!114 &1931046158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14139,7 +14335,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 30, y: -110}
+  m_AnchoredPosition: {x: 0, y: -110}
   m_SizeDelta: {x: 51.8689, y: 52.207}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1945694455
@@ -14569,6 +14765,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &1979930623
 BoxCollider:
@@ -14696,6 +14893,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &1994101922
 BoxCollider:
@@ -14792,6 +14990,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &2000368651
 BoxCollider:
@@ -14919,6 +15118,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &2045468923
 BoxCollider:
@@ -15414,6 +15614,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &2109482474
 BoxCollider:
@@ -15801,6 +16002,7 @@ MonoBehaviour:
   _cellType: 0
   _pairEnemyCell: {fileID: 0}
   _attackerTurret: {fileID: 0}
+  _farmerTurret: {fileID: 0}
   _parallelCell: {fileID: 0}
 --- !u!65 &2147454081
 BoxCollider:

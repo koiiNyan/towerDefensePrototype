@@ -7,8 +7,15 @@ namespace ZombieDefense
 {
     public class TurretUpgradeMenu : MonoBehaviour
     {
-        private AttackerTurret _chosenTurret;
-        public AttackerTurret ChosenTurret { get => _chosenTurret; set => _chosenTurret = value; }
+        private FarmerTurret _chosenTurretFarmer;
+        public FarmerTurret ChosenTurretFarmer { get => _chosenTurretFarmer; set => _chosenTurretFarmer = value; }
+
+        private AttackerTurret _chosenTurretAttacker;
+        public AttackerTurret ChosenTurretAttacker { get => _chosenTurretAttacker; set => _chosenTurretAttacker = value; }
+
+
+       // private CellType _cellType;
+      //  public CellType CellType { get => _cellType; set => _cellType = value; }
 
         [SerializeField]
         private Text _turretLevelText;
@@ -35,6 +42,11 @@ namespace ZombieDefense
         [SerializeField]
         private GameObject _turretTypePanel;
 
+        [SerializeField]
+        private GameObject _turretStatsPanelAttacker;
+        [SerializeField]
+        private GameObject _turretStatsPanelFarmer;
+
         private void Awake()
         {
             _player = GameObject.Find("Player").GetComponent<Player>();
@@ -42,10 +54,35 @@ namespace ZombieDefense
 
         private void OnEnable()
         {
-            _turretStatsPanel.SetActive(true);
-            _turretTypePanel.SetActive(false);
+
+            OpenPanels();
+
             SetUpgradeButtonActivity(true);
             UpdateStatsText();
+        }
+
+
+        private void OpenPanels()
+        {
+            _turretStatsPanel.SetActive(true);
+            _turretTypePanel.SetActive(false);
+
+        }
+
+        public void OpenPanels(AttackerTurret attackerTurret)
+        {
+            _chosenTurretAttacker = attackerTurret;
+            _chosenTurretFarmer = null;
+            _turretStatsPanelFarmer.SetActive(false);
+            _turretStatsPanelAttacker.SetActive(true);
+        }
+
+        public void OpenPanels(FarmerTurret farmerTurret)
+        {
+            _chosenTurretAttacker = null;
+            _chosenTurretFarmer = farmerTurret;
+            _turretStatsPanelFarmer.SetActive(true);
+            _turretStatsPanelAttacker.SetActive(false);
         }
 
         public void ClosePanel()
@@ -55,21 +92,21 @@ namespace ZombieDefense
 
         public void UpdateStatsText()
         {
-            if (_chosenTurret.Cost > _player.Money || _chosenTurret.CurrentLevel >= _chosenTurret.TurretMaxLevel) SetUpgradeButtonActivity(false);
-            _turretLevelText.text = $"Current Level: {_chosenTurret.CurrentLevel}";
-            _turretCostText.text = $"Turret Cost: {_chosenTurret.Cost}";
-            _turretHPText.text = $"Health: {_chosenTurret.BasicHp}";
-            _turretADText.text = $"Damage: {_chosenTurret.AttackDamage}";
-            _turretASText.text = $"Attack Speed: {_chosenTurret.AttackSpeed}";
+            if (_chosenTurretAttacker.Cost > _player.Money || _chosenTurretAttacker.CurrentLevel >= _chosenTurretAttacker.TurretMaxLevel) SetUpgradeButtonActivity(false);
+            _turretLevelText.text = $"Current Level: {_chosenTurretAttacker.CurrentLevel}";
+            _turretCostText.text = $"Turret Cost: {_chosenTurretAttacker.Cost}";
+            _turretHPText.text = $"Health: {_chosenTurretAttacker.BasicHp}";
+            _turretADText.text = $"Damage: {_chosenTurretAttacker.AttackDamage}";
+            _turretASText.text = $"Attack Speed: {_chosenTurretAttacker.AttackSpeed}";
 
-            if (_chosenTurret.CurrentLevel >= 5 && _chosenTurret.TurretType == AttackerType.None) OpenTurretType();
+            if (_chosenTurretAttacker.CurrentLevel >= 5 && _chosenTurretAttacker.TurretType == AttackerType.None) OpenTurretType();
 
 
         }
 
         public void EnoughMoney(int money)
         {
-            if (money >= _chosenTurret.Cost && _chosenTurret.CurrentLevel < _chosenTurret.TurretMaxLevel) SetUpgradeButtonActivity(true);
+            if (money >= _chosenTurretAttacker.Cost && _chosenTurretAttacker.CurrentLevel < _chosenTurretAttacker.TurretMaxLevel) SetUpgradeButtonActivity(true);
         }
 
         private void SetUpgradeButtonActivity(bool active)
@@ -80,22 +117,22 @@ namespace ZombieDefense
 
         public void UpdateAD()
         {
-            _chosenTurret.AttackDamage += _attackDamagePerLvl;
-            _chosenTurret.UpdateLvl();
+            _chosenTurretAttacker.AttackDamage += _attackDamagePerLvl;
+            _chosenTurretAttacker.UpdateLvl();
             UpdateStatsText();
         }
 
         public void UpdateAS()
         {
-            _chosenTurret.AttackSpeed += _attackSpeedPerLvl;
-            _chosenTurret.UpdateLvl();
+            _chosenTurretAttacker.AttackSpeed += _attackSpeedPerLvl;
+            _chosenTurretAttacker.UpdateLvl();
             UpdateStatsText();
         }
 
         public void UpdateHP()
         {
-            _chosenTurret.UpdateHp();
-            _chosenTurret.UpdateLvl();
+            _chosenTurretAttacker.UpdateHp();
+            _chosenTurretAttacker.UpdateLvl();
             UpdateStatsText();
         }
 
@@ -113,7 +150,7 @@ namespace ZombieDefense
 
         public void SetTurretType(int value)
         {
-            _chosenTurret.SetTurretType((AttackerType)value);
+            _chosenTurretAttacker.SetTurretType((AttackerType)value);
             ClosePanel();
         }
 

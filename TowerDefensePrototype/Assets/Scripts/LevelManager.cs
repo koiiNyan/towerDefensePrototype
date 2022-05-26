@@ -123,9 +123,14 @@ namespace ZombieDefense
             //В Юи - выбор башни
             //Проверять, что на клетка - 1) уже не занята башней
             // Для атакующей башни - проверять, что противоположная клетка не занята атакующей башней (через cell type)
-           if(component.CellTypo == CellType.Attacker)
+           else if(component.CellTypo == CellType.Attacker)
             {
                 TurretUpgradeMenu(component.AttackerTurret);
+            }
+
+            else if (component.CellTypo == CellType.Farmer)
+            {
+                TurretUpgradeMenu(component.FarmerTurret);
             }
             
             else Debug.Log("Cant'build");
@@ -156,9 +161,26 @@ namespace ZombieDefense
             else
             {
                 _turretUpgradeUI.SetActive(true);
-                _turretUpgradeUI.GetComponent<TurretUpgradeMenu>().ChosenTurret = turret;
+                _turretUpgradeUI.GetComponent<TurretUpgradeMenu>().OpenPanels(turret);
+                
                 //_turretUpgradeUI.GetComponent<TurretUpgradeMenu>().SetUpgradeButtonActivity(true);
                 //_turretUpgradeUI.GetComponent<TurretUpgradeMenu>().UpdateStatsText();
+            }
+        }
+
+        private void TurretUpgradeMenu(FarmerTurret turret)
+        {
+            if (TurretUIActive())
+            {
+                Debug.Log("active");
+                return;
+            }
+            else
+            {
+                _turretUpgradeUI.SetActive(true);
+                _turretUpgradeUI.GetComponent<TurretUpgradeMenu>().OpenPanels(turret);
+
+
             }
         }
 
@@ -205,8 +227,11 @@ namespace ZombieDefense
                 var turretPosition = cellPosition;
                 turretPosition.y = 0;
                 var turret = Instantiate(_farmerTurretPrefab, turretPosition, rotation);
+                turret.GetComponent<FarmerTurret>().TurretCell = component;
+
                 component.CellTypo = CellType.Farmer;
 
+                component.FarmerTurret = turret.GetComponent<FarmerTurret>();
 
                 _player.AddMoney(-turretCost);
                 //Debug.Log(turretCost);
@@ -260,6 +285,13 @@ namespace ZombieDefense
             while (_canSpawn && _gameActive) //TODO
             {
                 _currentWawe++;
+                var allFarmers = GameObject.FindObjectsOfType<FarmerTurret>();
+                foreach (FarmerTurret farmer in allFarmers)
+                {
+                    farmer.HealAttackerTurret();
+                }
+
+
                 UpdateSpawnText();
                 if (_currentWawe == _waveToWin)
                 {
