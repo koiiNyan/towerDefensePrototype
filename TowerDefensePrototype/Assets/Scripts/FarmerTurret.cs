@@ -14,14 +14,20 @@ namespace ZombieDefense
         private int _level;
         private const int c_min_lvl = 1;
         private const int c_max_lvl = 3;
-
+        public int TurretMaxLevel => c_max_lvl;
 
         [SerializeField]
         private Cell _turretCell;
         public Cell TurretCell { get => _turretCell; set => _turretCell = value; }
 
         private bool _isHealer = false;
+        public bool IsHealer { get => _isHealer; }
 
+        private bool _changedMoneyPerTick = false;
+        public bool ChangedMoneyPerTick { get => _changedMoneyPerTick; }
+
+        private bool _changedMoneyPerZombie = false;
+        public bool ChangedMoneyPerZombie { get => _changedMoneyPerZombie; }
 
         public int CurrentLevel
         {
@@ -50,6 +56,9 @@ namespace ZombieDefense
         private int _cost = 10;
 
         public int Cost { get => _cost; private set => _cost = value; }
+
+        [SerializeField, Range(1, 20), Tooltip("Процент увеличения цены при повышении уровня")]
+        private int _costPercent = 10;
 
         [SerializeField]
         private int _moneyPerTick = 5;
@@ -88,15 +97,19 @@ namespace ZombieDefense
        
        public void HealAttackerTurret()
         {
-            if (_isHealer && _turretCell.GetComponent<Cell>().AttackerTurret != null)
+            Debug.Log("Heal");
+            Debug.Log(IsHealer);
+            Debug.Log(_turretCell.GetComponent<Cell>().AttackerTurret);
+            if (_isHealer && _turretCell.GetComponent<Cell>().ParallelCell.AttackerTurret != null)
             {
-                _turretCell.GetComponent<Cell>().AttackerTurret.HealTurret();
+                _turretCell.GetComponent<Cell>().ParallelCell.AttackerTurret.HealTurret();
             }
         }
 
         public void ChangeMoneyPerTick()
         {
             _moneyPerTick *= _moneyPerTick;
+            _changedMoneyPerTick = true;
         }
 
         public void ChangeMoneyPerZombie()
@@ -104,6 +117,14 @@ namespace ZombieDefense
             var allZombies = GameObject.FindObjectsOfType<Zombie>(true);
 
             foreach (Zombie zombie in allZombies) zombie.Money *= 2;
+
+            _changedMoneyPerZombie = true;
+        }
+
+        public void UpdateLvl()
+        {
+            _level++;
+            _cost += _cost / _costPercent;
         }
     }
 

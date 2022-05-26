@@ -28,7 +28,16 @@ namespace ZombieDefense
         [SerializeField]
         private Text _turretASText;
         [SerializeField]
-        private Button[] _upgradeButtons;
+        private Button[] _upgradeAttackerButtons;
+
+        [SerializeField]
+        private Button[] _upgradeFarmerButtons;
+        [SerializeField]
+        private Button _updateHealFarmer;
+        [SerializeField]
+        private Button _updateMoneyPerTickFarmer;
+        [SerializeField]
+        private Button _updateMoneyPerZombieFarmer;
 
         [SerializeField]
         private int _attackDamagePerLvl = 2;
@@ -47,6 +56,12 @@ namespace ZombieDefense
         [SerializeField]
         private GameObject _turretStatsPanelFarmer;
 
+        [SerializeField]
+        private Text _turretLevelTextFarmer;
+        [SerializeField]
+        private Text _turretCostTextFarmer;
+
+
         private void Awake()
         {
             _player = GameObject.Find("Player").GetComponent<Player>();
@@ -57,7 +72,7 @@ namespace ZombieDefense
 
             OpenPanels();
 
-            SetUpgradeButtonActivity(true);
+            SetUpgradeButtonActivityAttacker(true);
             UpdateStatsText();
         }
 
@@ -92,27 +107,60 @@ namespace ZombieDefense
 
         public void UpdateStatsText()
         {
-            if (_chosenTurretAttacker.Cost > _player.Money || _chosenTurretAttacker.CurrentLevel >= _chosenTurretAttacker.TurretMaxLevel) SetUpgradeButtonActivity(false);
-            _turretLevelText.text = $"Current Level: {_chosenTurretAttacker.CurrentLevel}";
-            _turretCostText.text = $"Turret Cost: {_chosenTurretAttacker.Cost}";
-            _turretHPText.text = $"Health: {_chosenTurretAttacker.BasicHp}";
-            _turretADText.text = $"Damage: {_chosenTurretAttacker.AttackDamage}";
-            _turretASText.text = $"Attack Speed: {_chosenTurretAttacker.AttackSpeed}";
+            if (_chosenTurretAttacker != null)
+            {
+                if (_chosenTurretAttacker.Cost > _player.Money || _chosenTurretAttacker.CurrentLevel >= _chosenTurretAttacker.TurretMaxLevel) SetUpgradeButtonActivityAttacker(false);
+                _turretLevelText.text = $"Current Level: {_chosenTurretAttacker.CurrentLevel}";
+                _turretCostText.text = $"Turret Cost: {_chosenTurretAttacker.Cost}";
+                _turretHPText.text = $"Health: {_chosenTurretAttacker.BasicHp}";
+                _turretADText.text = $"Damage: {_chosenTurretAttacker.AttackDamage}";
+                _turretASText.text = $"Attack Speed: {_chosenTurretAttacker.AttackSpeed}";
 
-            if (_chosenTurretAttacker.CurrentLevel >= 5 && _chosenTurretAttacker.TurretType == AttackerType.None) OpenTurretType();
+                if (_chosenTurretAttacker.CurrentLevel >= 5 && _chosenTurretAttacker.TurretType == AttackerType.None) OpenTurretType();
+            }
 
+            if (_chosenTurretFarmer != null)
+            {
+                if (_chosenTurretFarmer.Cost > _player.Money || _chosenTurretFarmer.CurrentLevel >= _chosenTurretFarmer.TurretMaxLevel) SetUpgradeButtonActivityFarmer(false);
+
+                _turretLevelTextFarmer.text = $"Current Level: {_chosenTurretFarmer.CurrentLevel}";
+                _turretCostTextFarmer.text = $"Turret Cost: {_chosenTurretFarmer.Cost}";
+
+            }
 
         }
 
         public void EnoughMoney(int money)
         {
-            if (money >= _chosenTurretAttacker.Cost && _chosenTurretAttacker.CurrentLevel < _chosenTurretAttacker.TurretMaxLevel) SetUpgradeButtonActivity(true);
+            if (_chosenTurretAttacker != null)
+            {
+                if (money >= _chosenTurretAttacker.Cost && _chosenTurretAttacker.CurrentLevel < _chosenTurretAttacker.TurretMaxLevel) SetUpgradeButtonActivityAttacker(true);
+            }
+
+            if (_chosenTurretFarmer != null)
+            {
+                if (money >= _chosenTurretFarmer.Cost && _chosenTurretFarmer.CurrentLevel < _chosenTurretFarmer.TurretMaxLevel) SetUpgradeButtonActivityFarmer(true);
+                if (_chosenTurretFarmer.ChangedMoneyPerTick) SetButtonActivity(_updateMoneyPerTickFarmer, false);
+                if (_chosenTurretFarmer.ChangedMoneyPerZombie) SetButtonActivity(_updateMoneyPerZombieFarmer, false);
+                if (_chosenTurretFarmer.IsHealer) SetButtonActivity(_updateHealFarmer, false);
+            }
         }
 
-        private void SetUpgradeButtonActivity(bool active)
+        private void SetUpgradeButtonActivityAttacker(bool active)
         {
-            foreach (Button btn in _upgradeButtons)
+            foreach (Button btn in _upgradeAttackerButtons)
                 btn.interactable = active;
+        }
+
+        private void SetUpgradeButtonActivityFarmer(bool active)
+        {
+            foreach (Button btn in _upgradeFarmerButtons)
+                btn.interactable = active;
+        }
+
+        private void SetButtonActivity(Button btn, bool active)
+        {
+            btn.interactable = active;
         }
 
         public void UpdateAD()
@@ -142,7 +190,7 @@ namespace ZombieDefense
             // В зависимости от выбранного значения в списке, показывать информационные статы
             // При нажатии на плюс вызывать метод из башни на изменение статов башни
             
-            SetUpgradeButtonActivity(false);
+            SetUpgradeButtonActivityAttacker(false);
             _turretStatsPanel.SetActive(false);
             _turretTypePanel.SetActive(true);
 
@@ -152,6 +200,27 @@ namespace ZombieDefense
         {
             _chosenTurretAttacker.SetTurretType((AttackerType)value);
             ClosePanel();
+        }
+
+        public void MakeHealer()
+        {
+            _chosenTurretFarmer.MakeFarmerHealer();
+            _chosenTurretFarmer.UpdateLvl(); // TO DO Вынести в метод
+            UpdateStatsText();
+        }
+
+        public void ChangeMoneyPerTick()
+        {
+            _chosenTurretFarmer.ChangeMoneyPerTick();
+            _chosenTurretFarmer.UpdateLvl();
+            UpdateStatsText();
+        }
+
+        public void ChangeMoneyPerZombie()
+        {
+            _chosenTurretFarmer.ChangeMoneyPerZombie();
+            _chosenTurretFarmer.UpdateLvl();
+            UpdateStatsText();
         }
 
     }
