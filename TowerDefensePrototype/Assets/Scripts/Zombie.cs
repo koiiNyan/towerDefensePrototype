@@ -38,8 +38,9 @@ namespace ZombieDefense
 
         public Vector3 InitialPosition { get; } = new Vector3(0.5f, -0f, -16.5f); //TODO
 
-        private bool walking = true;
-        private bool dead = false;
+        private bool _walking = true;
+        private bool _dead = false;
+        private bool _isOnFire = false;
 
         [SerializeField]
         private int _money = 5;
@@ -64,6 +65,7 @@ namespace ZombieDefense
 
         [SerializeField, Range (0.5f, 5f), Tooltip("Чем значение ниже, тем выше скорость атаки")]
         private float _attackSpeed = 2f;
+        private float _originalAS = 2f;
 
 
         [SerializeField]
@@ -84,8 +86,8 @@ namespace ZombieDefense
 
         private void Update()  //TODO
         {
-            if (walking && _player.GameActive) Move();
-            if (dead) Die();
+            if (_walking && _player.GameActive) Move();
+            if (_dead) Die();
 
 
         }
@@ -104,7 +106,7 @@ namespace ZombieDefense
 
         public void Die()
         {
-            dead = false;
+            _dead = false;
             _zombieAnimator.SetTrigger("Dead");
             Debug.Log("Die");
             _player.AddMoney(_money);
@@ -125,7 +127,7 @@ namespace ZombieDefense
         {
             gameObject.SetActive(false);
             _currentHp = _hp;
-            walking = true;
+            _walking = true;
 
         }
 
@@ -171,7 +173,7 @@ namespace ZombieDefense
                      */
                 }
 
-                var normalDistance = new Vector3(0.5f, 0f, distance.z);
+                var normalDistance = new Vector3(transform.position.x, 0f, distance.z);
 
                 if (transform.position.z > normalDistance.z) normalDistance = _player.transform.position;
                 
@@ -184,7 +186,7 @@ namespace ZombieDefense
 
         private IEnumerator Attack() //TODO
         {
-            walking = false;
+            _walking = false;
             SetMoveSpeedAnimator(false);
             _zombieAnimator.SetTrigger("Attack");
 
@@ -198,7 +200,7 @@ namespace ZombieDefense
             }
             Debug.Log(currentTurret);
 
-            while (currentTurret != null && !dead)
+            while (currentTurret != null && !_dead)
             {
                 if (currentTurret.Health > 0) currentTurret.DealDamage(_attackDamage);
 
@@ -213,7 +215,7 @@ namespace ZombieDefense
 
 
             _zombieAnimator.ResetTrigger("Attack");
-            walking = true;
+            _walking = true;
             SetMoveSpeedAnimator(true);
 
             yield return null;
@@ -222,6 +224,46 @@ namespace ZombieDefense
         }
 
         private AttackerTurret[] FindAllAttackerTurrets() => FindObjectsOfType<AttackerTurret>();
+
+        public void SetOnFire()
+        {
+            if (!_isOnFire)
+            {
+                _isOnFire = true;
+                StartCoroutine(DealFireDamage());
+
+            }
+            return;
+        }
+
+        public void SlowAS()
+        {
+            StartCoroutine(SlowAttackSpeed());
+        }
+
+        private IEnumerator DealFireDamage()
+        {
+            for (int i=0; i < 5; i++)
+            {
+                Debug.Log("Fire Damage");
+                _hp -= 3;
+                yield return new WaitForSeconds(1);
+            }
+            _isOnFire = false;
+
+            yield return null;
+        }
+
+        private IEnumerator SlowAttackSpeed()
+        {
+            Debug.Log($"AS BEFORE = {_attackSpeed}");
+            _attackSpeed++;
+            
+            yield return new WaitForSeconds(3);
+            _attackSpeed = _originalAS;
+            Debug.Log($"AS AFTER = {_attackSpeed}");
+
+        }
 
 
 

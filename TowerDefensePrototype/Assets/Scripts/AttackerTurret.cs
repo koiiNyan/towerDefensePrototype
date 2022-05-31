@@ -140,15 +140,52 @@ namespace ZombieDefense
 
             while (zombies.Count != 0)
             {
-                //Debug.Log(zombies[0].Health);
-                if (zombies[0].Health > 0) zombies[0].Health -= _attackDamage;
-                else
+                if (_turretType == AttackerType.None || _turretType == AttackerType.Ice)
                 {
-                    zombies[0].Die();
-                    zombies.Remove(zombies[0]);
-                   // Debug.Log(zombies.Count);
+                    Debug.Log("Usual Attack");
+                    if (zombies[0].Health > 0)
+                    {
+                        zombies[0].Health -= _attackDamage;
+                        if (_turretType == AttackerType.Ice) zombies[0].SlowAS();
+                    }
+                    else
+                    {
+                        zombies[0].Die();
+                        zombies.Remove(zombies[0]);
+                        // Debug.Log(zombies.Count);
+                    }
                 }
-                
+
+                if (_turretType == AttackerType.Fire)
+                {
+                    Debug.Log("Fire Attack Turret");
+                    if (zombies[0].Health > 0) zombies[0].SetOnFire();
+                    else
+                    {
+                        zombies[0].Die();
+                        zombies.Remove(zombies[0]);
+                        // Debug.Log(zombies.Count);
+                    }
+                }
+
+                if (_turretType == AttackerType.Electricity)
+                {
+                    foreach (Zombie zombie in zombies)
+                    {
+                        Debug.Log("Electricity Attack");
+                        if (zombie.Health > 0)
+                        {
+                            zombie.Health -= _attackDamage;
+                        }
+                        else
+                        {
+                            zombie.Die();
+                            zombies.Remove(zombies[0]);
+                            // Debug.Log(zombies.Count);
+                        }
+                    }
+                }
+
                 yield return new WaitForSeconds(_attackSpeed);
 
             }

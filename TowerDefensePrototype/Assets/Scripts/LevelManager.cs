@@ -72,6 +72,12 @@ namespace ZombieDefense
             StartCoroutine(SpawnEnemies());
             SetCells();
             UpdateSpawnText();
+
+            var audio = GetComponent<AudioSource>();
+            audio.volume = Settings.Instance.VolumeValue > 0 ? Settings.Instance.VolumeValue : 1;
+            Debug.Log($"Volume = {Settings.Instance.VolumeValue}");
+
+            Debug.Log($"Difficulty = {Settings.Instance.DifficultyLevel}");
         }
 
         private void Update()
@@ -322,6 +328,7 @@ namespace ZombieDefense
                         {
                             pooledZombie.SetActive(true);
                             pooledZombie.transform.position = pooledZombie.GetComponent<Zombie>().InitialPosition; //TODO
+                            
                             pooledZombie.GetComponent<Zombie>().SetMoveSpeedAnimator(true);//TODO
                         }
 
