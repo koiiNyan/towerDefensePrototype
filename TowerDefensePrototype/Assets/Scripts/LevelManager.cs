@@ -336,8 +336,11 @@ namespace ZombieDefense
                         if (pooledZombie != null)
                         {
                             pooledZombie.SetActive(true);
-                            pooledZombie.transform.position = pooledZombie.GetComponent<Zombie>().InitialPosition; //TODO
-                            
+
+
+                            pooledZombie.transform.position = GetZombiePosition(pooledZombie, i);
+
+
                             pooledZombie.GetComponent<Zombie>().SetMoveSpeedAnimator(true);//TODO
                         }
 
@@ -347,6 +350,17 @@ namespace ZombieDefense
                 _canSpawn = false;
 
             }
+        }
+
+        private Vector3 GetZombiePosition(GameObject zombieObject, int i)
+        {
+            if (zombieObject.GetComponent<Zombie>().ZombieType == EnemyType.Boss || Settings.Instance.DifficultyLevel == 0 ||
+                Settings.Instance.DifficultyLevel == 1 && i < 5 || Settings.Instance.DifficultyLevel == 2 && i < 3) 
+                return zombieObject.GetComponent<Zombie>().InitialPosition;
+            else if (Settings.Instance.DifficultyLevel == 1 && i > 5 || Settings.Instance.DifficultyLevel == 2 && (i > 3 && i <7))
+                return zombieObject.GetComponent<Zombie>().InitialPositionNormal;
+
+            else return zombieObject.GetComponent<Zombie>().InitialPositionHard;
         }
 
 

@@ -60,7 +60,12 @@ namespace ZombieDefense
         private const float c_turretRotationX = 90f;
 
 
-        public float GetRotation(float x) => (x > 0) ? -c_turretRotationX : c_turretRotationX;
+        public float GetRotation(float x) 
+        {
+            if (x == 1.5f || x == 4.5f || x == 7.5f) return -c_turretRotationX;
+            else return c_turretRotationX;
+        }
+
 
         [SerializeField]
         private Cell _turretCell;

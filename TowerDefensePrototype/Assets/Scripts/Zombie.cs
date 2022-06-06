@@ -37,6 +37,8 @@ namespace ZombieDefense
         private Animator _zombieAnimator;
 
         public Vector3 InitialPosition { get; } = new Vector3(0.5f, -0f, -16.5f); //TODO
+        public Vector3 InitialPositionNormal { get; } = new Vector3(3.5f, -0f, -16.5f); //TODO
+        public Vector3 InitialPositionHard { get; } = new Vector3(6.5f, -0f, -16.5f); //TODO
 
         private bool _walking = true;
         private bool _dead = false;
