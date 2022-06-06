@@ -62,6 +62,13 @@ namespace ZombieDefense
         private bool _gameActive = true;
         public bool GameActive { get => _gameActive; private set => _gameActive = value; }
 
+        [SerializeField]
+        private GameObject[] _easyObjects;
+        [SerializeField]
+        private GameObject[] _normalObjects;
+        [SerializeField]
+        private GameObject[] _hardObjects;
+
         private void Awake()
         {
             _player = GameObject.Find("Player").GetComponent<Player>();
@@ -78,6 +85,8 @@ namespace ZombieDefense
             Debug.Log($"Volume = {Settings.Instance.VolumeValue}");
 
             Debug.Log($"Difficulty = {Settings.Instance.DifficultyLevel}");
+
+            ActivateObjectsBasedOnLvl();
         }
 
         private void Update()
@@ -341,7 +350,7 @@ namespace ZombieDefense
         }
 
 
-        private void SetCells()
+        private void SetCells()   //Поправить, пробрасывается слишком много Pair turret cell в enemyCell и некорректный Pair Enemy cell в Cell
         {
             var allEnemiesCells = GetComponentsInChildren<EnemyCell>();
 
@@ -349,7 +358,7 @@ namespace ZombieDefense
             {
                 foreach(EnemyCell enemy in allEnemiesCells)
                 {
-                    if (cell.transform.position.z == enemy.transform.position.z)
+                    if (cell.transform.position.z == enemy.transform.position.z  && Mathf.Abs(cell.transform.position.x - enemy.transform.position.x) == 1)
                     {
                         cell.SetEnemyCell(enemy);
                         enemy.SetTurretCell(cell);
@@ -390,6 +399,42 @@ namespace ZombieDefense
         {
             _pauseUI.SetActive(!_pauseUI.activeInHierarchy);
             Time.timeScale = _pauseUI.activeInHierarchy ? 0 : 1;
+        }
+
+        private void ActivateObjectsBasedOnLvl()
+        {
+            switch (Settings.Instance.DifficultyLevel)
+            {
+                case 0:
+                    ActivateObjects(_easyObjects, true);
+                    ActivateObjects(_normalObjects, false);
+                    ActivateObjects(_hardObjects, false);
+                    break;
+
+                case 1:
+                    ActivateObjects(_easyObjects, true);
+                    ActivateObjects(_normalObjects, true);
+                    ActivateObjects(_hardObjects, false);
+                    break;
+
+                case 2:
+                    ActivateObjects(_easyObjects, true);
+                    ActivateObjects(_normalObjects, true);
+                    ActivateObjects(_hardObjects, true);
+                    break;
+
+                default:
+                    break;
+
+            }
+        }
+
+        private void ActivateObjects(GameObject[] objects, bool activation)
+        {
+            foreach (GameObject obj in objects)
+            {
+                obj.SetActive(activation);
+            }
         }
 
     }

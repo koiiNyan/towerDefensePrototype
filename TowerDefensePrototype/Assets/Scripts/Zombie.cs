@@ -153,11 +153,16 @@ namespace ZombieDefense
 
             var distance = _player.transform.position;
 
+            distance.x = transform.position.x;
+
             if (allTurrets.Length > 0)
             {
+    
                 distance = new Vector3(0f, 0f, -20f);
                 foreach (AttackerTurret turret in allTurrets)
                 {
+                    if (Mathf.Abs(transform.position.x - turret.transform.position.x) != 1) continue;
+
                     var deltaDistance = turret.transform.position - transform.position;
                     if (deltaDistance.z > distance.z)
                     {
@@ -176,7 +181,8 @@ namespace ZombieDefense
                 var normalDistance = new Vector3(transform.position.x, 0f, distance.z);
 
                 if (transform.position.z > normalDistance.z) normalDistance = _player.transform.position;
-                
+
+                normalDistance.x = transform.position.x;
                 return normalDistance;
             }
 
